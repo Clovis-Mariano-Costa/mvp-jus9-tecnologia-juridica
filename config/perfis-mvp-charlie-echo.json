@@ -1,0 +1,113 @@
+{
+  "versao": "1.0",
+  "nome_ia": "Charlie Echo, Inteligência Artificial da Jus 9 Tecnologia Jurídica",
+  "governanca": "Excluir perfis é direito exclusivo da Jus 9 Tecnologia Jurídica, com assinatura/autorização do Presidente da Jus 9 Tecnologia Jurídica e auditoria.",
+  "agenda": "Agenda em todos os MVPs, preparada para futura integração com Google Agenda/Google Calendar.",
+  "perfis": [
+    {
+      "id": "jurista",
+      "nome": "Jurista",
+      "equivalente": "Dossiê jurídico-doutrinário / estudo jurídico"
+    },
+    {
+      "id": "advogado",
+      "nome": "Advogado(a)",
+      "equivalente": "DAJ / Dossiê Administrativo Jurídico"
+    },
+    {
+      "id": "defensor_publico",
+      "nome": "Defensor(a) Público(a)",
+      "equivalente": "DAJ / Dossiê de assistência jurídica"
+    },
+    {
+      "id": "juiz",
+      "nome": "Juiz(a)",
+      "equivalente": "Autos / processo judicial"
+    },
+    {
+      "id": "promotor",
+      "nome": "Promotor(a)",
+      "equivalente": "Procedimento ministerial / notícia de fato / inquérito civil"
+    },
+    {
+      "id": "procurador",
+      "nome": "Procurador(a)",
+      "equivalente": "Processo administrativo / expediente jurídico"
+    },
+    {
+      "id": "delegado",
+      "nome": "Delegado(a) de Polícia",
+      "equivalente": "Inquérito policial / procedimento investigativo"
+    },
+    {
+      "id": "investigador",
+      "nome": "Investigador(a) / Agente policial",
+      "equivalente": "Relatório de diligência / procedimento investigativo"
+    },
+    {
+      "id": "perito_judicial",
+      "nome": "Perito(a) judicial",
+      "equivalente": "Laudo pericial / dossiê técnico pericial"
+    },
+    {
+      "id": "assistente_tecnico",
+      "nome": "Assistente técnico",
+      "equivalente": "Parecer técnico / dossiê técnico"
+    },
+    {
+      "id": "estagiario",
+      "nome": "Estagiário(a) de Direito",
+      "equivalente": "Pasta de estudo / dossiê supervisionado"
+    },
+    {
+      "id": "assistente_juridico",
+      "nome": "Assistente jurídico / Paralegal",
+      "equivalente": "Pasta administrativa / dossiê operacional"
+    },
+    {
+      "id": "servidor_judiciario",
+      "nome": "Servidor(a) do Judiciário",
+      "equivalente": "Expediente judicial / fila processual"
+    },
+    {
+      "id": "cartorio",
+      "nome": "Cartório judicial / extrajudicial",
+      "equivalente": "Ato registral / ato notarial"
+    },
+    {
+      "id": "compliance",
+      "nome": "Compliance / LGPD / Auditoria",
+      "equivalente": "Dossiê de conformidade / matriz de risco"
+    },
+    {
+      "id": "departamento_juridico",
+      "nome": "Departamento jurídico empresarial",
+      "equivalente": "Dossiê jurídico empresarial"
+    },
+    {
+      "id": "professor",
+      "nome": "Professor(a) de Direito",
+      "equivalente": "Plano de aula / dossiê didático"
+    },
+    {
+      "id": "pesquisador",
+      "nome": "Pesquisador(a) jurídico(a)",
+      "equivalente": "Dossiê de pesquisa / projeto acadêmico"
+    },
+    {
+      "id": "detetive_particular",
+      "nome": "Detetive particular",
+      "equivalente": "Dossiê investigativo lícito"
+    },
+    {
+      "id": "mediador",
+      "nome": "Mediador(a) / Conciliador(a)",
+      "equivalente": "Registro de mediação / mapa de interesses"
+    },
+    {
+      "id": "cidadao_assistido",
+      "nome": "Cidadão assistido / Cliente orientado",
+      "equivalente": "Pasta de atendimento / guia de documentos"
+    }
+  ]
+}
