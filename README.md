@@ -1,17 +1,9 @@
 # MVP Jus 9
 
-## Repertório
+Repertório: `mvp-jus9-tecnologia-juridica`
 
-`mvp-jus9-tecnologia-juridica`
+Status: existente
 
-## Status
+Mão na Massa Final — padrão visual, assinatura, governança e orientação obrigatória.
 
-existente
-
-## Fase
-
-Pré-Mão na Massa — Pacote Governança encerrado.
-
-## Finalidade
-
-Prepara o repertório MVP com regras de segurança, governança, separação entre protótipo e produção, links para backend futuro e cautelas sobre dados protegidos.
+© Jus 9 Tecnologia Jurídica — software livre, autoria preservada.
