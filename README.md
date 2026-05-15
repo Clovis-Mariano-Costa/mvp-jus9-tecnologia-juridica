@@ -1,35 +1,17 @@
-# MVP Jus 9 Tecnologia Jurídica
+# MVP Jus 9
 
-## Domínio previsto
+## Repertório
 
-https://mvp.jus9tecnologia.com.br
+`mvp-jus9-tecnologia-juridica`
 
-## Configuração Cloudflare Pages
+## Status
 
-Framework preset: None  
-Build command: exit 0  
-Build output directory: .  
-Root directory: /
+existente
 
-## Conteúdo
+## Fase
 
-- Pré-cadastro do líder
-- Perfis profissionais
-- Agenda em todos os MVPs
-- Charlie Echo, Inteligência Artificial da Jus 9 Tecnologia Jurídica
-- Configurações JSON de perfis e cláusulas pétreas
+Pré-Mão na Massa — Pacote Governança encerrado.
 
----
+## Finalidade
 
-## Autoria, licença e DNA de referência
-
-Este repositório integra o ecossistema da **Jus 9 Tecnologia Jurídica**.
-
-Software livre com autoria preservada: a licença de uso não remove a autoria,
-a origem, a assinatura institucional nem os direitos autorais da Jus 9 Tecnologia Jurídica.
-
-- Repositório: `mvp-jus9-tecnologia-juridica`
-- Referência oficial: https://mvp.jus9tecnologia.com.br/
-- E-mail de contato: clovis@jus9tecnologia.com.br
-- DNA de referência de Charlie Echo da Costa: `charlieecho-jus9-tecnologia-juridica`
-
+Prepara o repertório MVP com regras de segurança, governança, separação entre protótipo e produção, links para backend futuro e cautelas sobre dados protegidos.
