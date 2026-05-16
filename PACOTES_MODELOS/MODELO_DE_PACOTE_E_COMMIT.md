@@ -1,27 +1,8 @@
-# Modelo de pacote — mvp-jus9-tecnologia-juridica
+# Modelo de pacote e commit
 
-## Preparar pacote
-- Confirmar escopo.
-- Identificar arquivos atingidos.
-- Classificar conteúdo.
-- Verificar links e botões antigos.
+1. Preparar pacote
+2. Embrulhar pacote
+3. Próximo pacote
+4. Mão na Massa
 
-## Embrulhar pacote
-- Gerar relatório curto.
-- Gerar Summary e Description.
-- Incluir arquivos alterados.
-- Evitar conteúdo sigiloso.
-
-## Mão na Massa
-- Aplicar alterações com revisão.
-- Testar rotas principais.
-- Oferecer ZIP para download.
-
-## Commit sugerido
-Summary: Atualiza mvp-jus9-tecnologia-juridica com assinatura e continuidade
-
-Description:
-- adiciona assinatura autoral com © quando cabível
-- inclui recado de continuidade para próxima IA
-- preserva links, botões e rotas antigas
-- prepara repertório para revisão final do ciclo
+Sempre entregar Summary e Description.
