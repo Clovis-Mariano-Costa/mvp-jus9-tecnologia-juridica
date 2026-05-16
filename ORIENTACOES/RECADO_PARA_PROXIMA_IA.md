@@ -1,7 +1,5 @@
 # Recado para próxima IA
 
-Preservar o fluxo do MVP: Acessar MVP → login → seleção de perfil → cadastro condicional → MVP correspondente.
-
-Preservar links para Equipe e Investidores, Agenda Jus 9 em todos os perfis, DAJ apenas para Advogado/Defensor Público e Cadastro Líder no primeiro cadastro.
-
-Não implementar autenticação real sem backend seguro. Não expor tokens, chaves ou segredos no front-end.
+Preservar o visual aprovado. Não substituir páginas bonitas por HTML simples.
+Prioridade: link Equipe visível no cabeçalho da página principal da Jus 9.
+A regra semântica continua: toda ocorrência pública relevante deve apontar para sua página pública oficial quando houver rota.
