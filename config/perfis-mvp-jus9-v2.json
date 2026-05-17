@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "advogado-defensor",
+    "nome": "Advogado(a) ou Defensor(a) Público(a)",
+    "status": "Ajustado",
+    "descricao": "MVP jurídico profissional já existente, ajustado para também atender Defensor Público no mesmo ambiente."
+  },
+  {
+    "slug": "professor",
+    "nome": "Professor(a)",
+    "status": "Novo",
+    "descricao": "Ambiente didático para preparar aulas, atividades, roteiros e materiais de ensino jurídico."
+  },
+  {
+    "slug": "estudante",
+    "nome": "Estudante",
+    "status": "Novo",
+    "descricao": "Apoio educativo para estudo, resumos, dúvidas e organização de aprendizagem."
+  },
+  {
+    "slug": "cidadao",
+    "nome": "Cidadão / Interessado",
+    "status": "Novo",
+    "descricao": "Informação jurídica simples e responsável, sem substituir profissional habilitado."
+  },
+  {
+    "slug": "perito-judicial",
+    "nome": "Perito Judicial",
+    "status": "Novo",
+    "descricao": "Organização técnica de perícias judiciais e documentos de apoio."
+  },
+  {
+    "slug": "investidor-parceiro",
+    "nome": "Investidor / Parceiro",
+    "status": "Novo",
+    "descricao": "Entrada institucional para conhecer a Jus 9, MVP, equipe, pitch e roadmap."
+  },
+  {
+    "slug": "escritorio-juridico",
+    "nome": "Escritório Jurídico",
+    "status": "Novo",
+    "descricao": "Ambiente para equipes jurídicas e organização interna de casos e documentos."
+  },
+  {
+    "slug": "empresa-juridico-interno",
+    "nome": "Empresa / Jurídico Interno",
+    "status": "Novo",
+    "descricao": "Organização de contratos, riscos, compliance, LGPD e demandas internas."
+  },
+  {
+    "slug": "orgao-publico",
+    "nome": "Órgão Público / Instituição",
+    "status": "Previsto / em governança",
+    "descricao": "Perfil previsto para uso institucional com cautela, transparência e segurança."
+  },
+  {
+    "slug": "administrador-jus9",
+    "nome": "Administrador Jus 9",
+    "status": "Previsto / em governança",
+    "descricao": "Perfil interno futuro para permissões, configurações e governança do ecossistema."
+  },
+  {
+    "slug": "juiz-magistrado",
+    "nome": "Juiz / Magistrado",
+    "status": "Previsto / em governança",
+    "descricao": "Perfil futuro e sensível para organização documental, sem substituir decisão humana."
+  },
+  {
+    "slug": "promotor-ministerio-publico",
+    "nome": "Promotor / Ministério Público",
+    "status": "Previsto / em governança",
+    "descricao": "Perfil futuro e sensível para organização documental, sem substituir atuação institucional."
+  },
+  {
+    "slug": "delegado-autoridade-policial",
+    "nome": "Delegado / Autoridade Policial",
+    "status": "Previsto / em governança",
+    "descricao": "Perfil futuro e sensível para organização documental e cadeia de custódia, sempre dentro da lei."
+  }
+]
