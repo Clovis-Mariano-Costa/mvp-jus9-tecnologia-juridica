@@ -1,0 +1,312 @@
+/*
+  Jus 9 MVP - Fase Visual 2
+  Registro: 2026-05-17 23:40:00.00000 -03:00
+  Charlie Fox da Costa - I.A CEO Especialista, sob governanca humana.
+*/
+:root{
+  --j9-night:#050b14;
+  --j9-ink:#071323;
+  --j9-steel:#123047;
+  --j9-gold:#d9ad59;
+  --j9-gold-soft:#f4d58d;
+  --j9-cyan:#4fd5e8;
+  --j9-green:#4fb477;
+  --j9-paper:#f7f2e8;
+  --j9-paper-2:#fffdf8;
+  --j9-line:rgba(217,173,89,.34);
+  --j9-blue-line:rgba(79,213,232,.22);
+  --j9-shadow:0 22px 60px rgba(5,11,20,.18);
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:
+    linear-gradient(135deg,rgba(5,11,20,.98) 0,rgba(7,19,35,.96) 28%,rgba(247,242,232,.98) 28%,rgba(255,253,248,.98) 100%) fixed;
+  color:var(--j9-ink);
+  letter-spacing:0;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(217,173,89,.08) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(79,213,232,.05) 1px,transparent 1px);
+  background-size:88px 88px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.35),transparent 62%);
+  z-index:-1;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid var(--j9-cyan);
+  outline-offset:3px;
+}
+
+.topbar,
+header,
+.header,
+.site-nav,
+.nav{
+  background:rgba(5,11,20,.92);
+  border-bottom:1px solid var(--j9-line);
+  box-shadow:0 10px 32px rgba(5,11,20,.22);
+  backdrop-filter:blur(14px);
+}
+
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:30;
+  justify-content:flex-start;
+  padding-inline:clamp(1rem,4vw,4rem);
+}
+
+.site-nav .logo,
+.brand,
+.brand a,
+nav a.primary{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.site-nav a,
+.links a,
+.nav-links a,
+nav a{
+  min-height:38px;
+  align-items:center;
+}
+
+.site-nav .cta,
+.btn,
+button.btn,
+a.btn,
+nav a.primary{
+  border-radius:10px;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
+}
+
+.site-nav .cta:hover,
+.btn:hover,
+button.btn:hover,
+a.btn:hover,
+nav a:hover{
+  transform:translateY(-1px);
+  text-decoration:none;
+  border-color:rgba(244,213,141,.78);
+  box-shadow:0 12px 28px rgba(5,11,20,.18);
+}
+
+.btn.gold,
+.btn.primary,
+button.primary,
+nav a.primary{
+  background:linear-gradient(135deg,var(--j9-gold-soft),var(--j9-gold) 58%,#ad741d);
+  color:#06111f;
+  border-color:rgba(255,255,255,.12);
+}
+
+.main,
+.wrap,
+main{
+  width:min(1240px,100%);
+}
+
+.main{
+  margin-inline:auto;
+}
+
+.layout{
+  background:linear-gradient(120deg,#050b14 0,#071323 300px,var(--j9-paper) 300px,var(--j9-paper-2) 100%);
+}
+
+.side{
+  position:sticky;
+  top:72px;
+  align-self:start;
+  min-height:calc(100vh - 72px);
+  background:linear-gradient(180deg,#050b14,#071d32 58%,#082235);
+}
+
+.menu a{
+  border:1px solid transparent;
+  border-radius:10px;
+}
+
+.menu a.active,
+.menu a:hover{
+  border-color:var(--j9-line);
+  background:linear-gradient(135deg,rgba(217,173,89,.22),rgba(79,213,232,.10));
+}
+
+.hero{
+  border-radius:8px;
+  overflow:hidden;
+  position:relative;
+  border-color:var(--j9-line);
+  background:
+    linear-gradient(135deg,rgba(5,11,20,.96),rgba(10,39,61,.94) 62%,rgba(23,77,67,.88));
+  box-shadow:var(--j9-shadow);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:5px;
+  background:linear-gradient(90deg,var(--j9-gold),var(--j9-cyan),var(--j9-green));
+}
+
+.hero h1,
+h1{
+  letter-spacing:0;
+  text-wrap:balance;
+}
+
+.hero p,
+.lead,
+p{
+  text-wrap:pretty;
+}
+
+.eyebrow,
+.kicker,
+.badge{
+  letter-spacing:.16em;
+}
+
+.card,
+.strip,
+.profile,
+.profile-card,
+.links-semanticos-jus9-v1-5,
+details{
+  border-radius:8px!important;
+  border-color:var(--j9-line)!important;
+  box-shadow:0 14px 36px rgba(5,11,20,.10);
+}
+
+.card,
+.strip,
+.profile,
+details{
+  background:linear-gradient(180deg,rgba(255,253,248,.98),rgba(247,242,232,.96));
+}
+
+.strip.dark,
+.card.dark{
+  background:linear-gradient(135deg,#06111f,#0b2238);
+  border-color:var(--j9-blue-line)!important;
+}
+
+.grid,
+.grid2,
+.grid-2,
+.grid-3,
+.cards3,
+.profile-grid,
+.demo-list{
+  align-items:stretch;
+}
+
+.metric,
+.demo-item,
+.event,
+.profile,
+.profile-card{
+  min-height:100%;
+}
+
+.metric .ico,
+.hero-art{
+  border-radius:8px;
+  background:
+    linear-gradient(135deg,rgba(217,173,89,.20),rgba(79,213,232,.10)),
+    rgba(255,255,255,.06);
+  border:1px solid var(--j9-line);
+}
+
+.pill,
+.badge,
+.badge-novo,
+.status{
+  border-radius:999px;
+  letter-spacing:.02em;
+}
+
+.notice{
+  border-radius:8px;
+  border:1px solid rgba(217,173,89,.36);
+  border-left:5px solid var(--j9-gold);
+}
+
+input,
+select,
+textarea{
+  border-radius:8px!important;
+  border-color:rgba(18,48,71,.28)!important;
+  background:rgba(255,255,255,.92)!important;
+  color:var(--j9-ink)!important;
+}
+
+table,
+.table{
+  border:1px solid rgba(18,48,71,.12);
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.table th{
+  color:#fff;
+  background:#0b2238;
+}
+
+.footer,
+footer{
+  background:rgba(5,11,20,.94);
+  color:#dbe8f5;
+  border-top:1px solid var(--j9-line);
+}
+
+.links-semanticos-jus9-v1-5{
+  background:linear-gradient(180deg,rgba(255,253,248,.96),rgba(247,242,232,.96))!important;
+}
+
+@media(max-width:1000px){
+  body,
+  .layout{
+    background:linear-gradient(180deg,#050b14 0,#071323 220px,var(--j9-paper) 220px,var(--j9-paper-2) 100%);
+  }
+  .side{
+    position:static;
+    min-height:auto;
+  }
+  .site-nav{
+    position:static;
+  }
+}
+
+@media(max-width:640px){
+  .hero{
+    padding:1.25rem;
+  }
+  .hero h1,
+  h1{
+    font-size:clamp(2rem,12vw,2.8rem)!important;
+    line-height:1.04!important;
+  }
+  .btn,
+  a.btn,
+  button.btn{
+    width:100%;
+  }
+  .actions{
+    width:100%;
+  }
+}
