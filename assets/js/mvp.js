@@ -7,7 +7,7 @@ const JUS9 = {
     social: 'https://jus9verde.jus9tecnologia.com.br/charlie-echo-social#chat-social',
     privacidade: 'https://www.jus9tecnologia.com.br/privacidade.html',
     termos: 'https://www.jus9tecnologia.com.br/termos.html',
-    contato: 'mailto:clovis@jus9tecnologia.com.br'
+    contato: 'mailto:Contato@jus9tecnologia.com.br'
   }
 };
 function go(path){ window.location.href = path; }
