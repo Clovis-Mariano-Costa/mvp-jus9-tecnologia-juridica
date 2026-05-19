@@ -1,0 +1,41 @@
+{
+  "name": "MVP Jus 9",
+  "short_name": "MVP Jus 9",
+  "description": "Aplicativo demonstrativo dos MVPs da Jus 9 Tecnologia Jurídica.",
+  "start_url": "/app.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "categories": ["productivity", "business", "education"],
+  "icons": [
+    {
+      "src": "/assets/img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Selecionar Perfil",
+      "short_name": "Perfis",
+      "url": "/selecionar-perfil.html",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "512x512", "type": "image/png" }]
+    },
+    {
+      "name": "Agenda Jus 9",
+      "short_name": "Agenda",
+      "url": "/app-agenda.html",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "512x512", "type": "image/png" }]
+    },
+    {
+      "name": "Painel",
+      "short_name": "Painel",
+      "url": "/app-painel.html",
+      "icons": [{ "src": "/assets/img/favicon.png", "sizes": "512x512", "type": "image/png" }]
+    }
+  ]
+}
