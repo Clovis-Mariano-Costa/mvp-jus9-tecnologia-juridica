@@ -1,1 +1,239 @@
-﻿<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agenda Jus 9 — MVP</title><link rel="stylesheet" href="assets/css/visual-mvp-fase1.css"><link rel="stylesheet" href="assets/css/visual-mvp-fase2.css"><meta name="theme-color" content="#07111f"><link rel="manifest" href="manifest.webmanifest"></head><body><div class="topbar">Jus 9 Tecnologia Jurídica — software livre, autoria preservada.</div><header class="site-nav"><div class="logo">JUS <span style="color:var(--gold)">9</span></div><a href="app.html">App</a><a href="https://www.jus9tecnologia.com.br/">Ecossistema</a><a href="perfil-advogado.html">MVP Advogados</a><a href="seguranca.html">Segurança & Sigilo</a><a href="https://equipe.jus9tecnologia.com.br/" class="equipe">Equipe</a><a href="https://www.jus9tecnologia.com.br/mais-direito">Mais Direito</a><a href="https://investimentos.jus9tecnologia.com.br/">Investidores</a><a href="https://charlieecho.jus9tecnologia.com.br/">Charlie Echo</a><a href="https://laboratorio.jus9tecnologia.com.br/">Laboratório</a><a class="cta" href="index.html">Acompanhe o MVP</a></header><div class="layout"><aside class="side"><div class="brand">JUS <span style="color:var(--gold)">9</span><small>TECNOLOGIA JURÍDICA</small></div><nav class="menu"><a class="" href="perfil-advogado.html"><span>▣</span>Painel</a><a class="" href="clientes.html"><span>👤</span>Clientes</a><a class="" href="atendimento.html"><span>🎧</span>Atendimento inicial</a><a class="" href="retorno.html"><span>↩</span>Retorno</a><a class="" href="daj.html"><span>📄</span>DAJ</a><a class="" href="processos.html"><span>▣</span>Processos</a><a class="" href="prazos.html"><span>📅</span>Prazos</a><a class="active" href="agenda.html"><span>📅</span>Agenda<span class=badge-novo>NOVO</span></a><a class="" href="documentos.html"><span>📁</span>Documentos</a><a class="" href="workspace.html"><span>▤</span>Workspace</a><a class="" href="cofre.html"><span>🔒</span>Cofre Jurídico</a><a class="" href="area-secreta.html"><span>▢</span>Área Secreta</a><a class="" href="ia-profissional.html"><span>✦</span>IA Profissional</a><a class="" href="index.html"><span>↪</span>Sair do demo</a></nav><div class="demo-box"><h4>ACESSO DEMONSTRATIVO</h4><div>E-mail</div><code>demo1@jus9tecnologia.com.br</code><div>Senha</div><code>Jus9MVP#2026</code><p>Este acesso é apenas demonstrativo. Nenhum dado real é utilizado.</p><span class="pill dark">DEMO • SEM DADOS REAIS</span></div></aside><main class="main"><section class="hero"><div><div class="eyebrow">Agenda Jus 9</div><h1>Agenda integrada dos MVPs</h1><p>Modelo visual para integrar compromissos, prazos, aulas, reuniões, grupos e tarefas em todos os perfis do MVP.</p></div><div class="hero-art"><div class="scale">📅</div></div></section><section class="grid2"><div class="card"><h2>Semana demonstrativa</h2><div class="schedule"><div class="event"><b>SEG 20</b><span>09:00</span><span>Prazo interno / Aula / Reunião</span><span class="status">Demo</span></div><div class="event"><b>TER 21</b><span>14:00</span><span>Atendimento / Orientação / Encontro</span><span class="status">Demo</span></div><div class="event"><b>QUA 22</b><span>16:00</span><span>Laboratório / Grupo / Audiência</span><span class="status">Demo</span></div></div></div><div class="card"><h2>Backend futuro</h2><p>A agenda real dependerá de autenticação, banco de dados, autorização por perfil, logs e sincronização segura.</p></div></section></main></div><footer class="footer">© Jus 9 Tecnologia Jurídica — software livre, autoria preservada.</footer><script src="assets/js/pwa-install.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agenda Jus 9 — MVP</title>
+  <link rel="stylesheet" href="assets/css/visual-mvp-fase1.css">
+  <link rel="stylesheet" href="assets/css/visual-mvp-fase2.css">
+  <meta name="theme-color" content="#07111f">
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+    .agenda-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .agenda-form label{display:grid;gap:.4rem;font-weight:900;color:#0b1a33}
+    .agenda-form input,.agenda-form select,.agenda-form textarea{width:100%;min-height:46px;padding:.8rem;border:1px solid #d8c9aa;border-radius:8px;font:inherit}
+    .agenda-form textarea{min-height:110px;resize:vertical}
+    .agenda-form .full{grid-column:1/-1}
+    .agenda-form .actions{grid-column:1/-1;margin-top:.2rem}
+    @media(max-width:760px){.agenda-form{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="topbar">Jus 9 Tecnologia Jurídica — software livre, autoria preservada.</div>
+<header class="site-nav">
+  <div class="logo">JUS <span style="color:var(--gold)">9</span></div>
+  <a href="app.html">App</a>
+  <a href="https://www.jus9tecnologia.com.br/">Ecossistema</a>
+  <a href="perfil-advogado.html">MVP Advogados</a>
+  <a href="seguranca.html">Segurança & Sigilo</a>
+  <a href="https://equipe.jus9tecnologia.com.br/" class="equipe">Equipe</a>
+  <a href="https://investimentos.jus9tecnologia.com.br/">Investidores</a>
+  <a class="cta" href="index.html">Acompanhe o MVP</a>
+</header>
+
+<div class="layout">
+  <aside class="side">
+    <div class="brand">JUS <span style="color:var(--gold)">9</span><small>TECNOLOGIA JURÍDICA</small></div>
+    <nav class="menu">
+      <a href="perfil-advogado.html"><span>▣</span>Painel</a>
+      <a href="clientes.html"><span>👤</span>Clientes</a>
+      <a href="daj.html"><span>📄</span>DAJ</a>
+      <a href="processos.html"><span>▣</span>Processos</a>
+      <a href="prazos.html"><span>📅</span>Prazos</a>
+      <a class="active" href="agenda.html"><span>📅</span>Agenda<span class="badge-novo">NOVO</span></a>
+      <a href="documentos.html"><span>📁</span>Documentos</a>
+      <a href="cofre.html"><span>🔒</span>Cofre Jurídico</a>
+      <a href="ia-profissional.html"><span>✦</span>IA Profissional</a>
+      <a href="index.html"><span>↪</span>Sair do demo</a>
+    </nav>
+    <div class="demo-box">
+      <h4>ACESSO DEMONSTRATIVO</h4>
+      <div>E-mail</div><code>demo1@jus9tecnologia.com.br</code>
+      <div>Senha</div><code>Jus9MVP#2026</code>
+      <p>Este acesso é apenas demonstrativo. Nenhum dado real é utilizado.</p>
+      <span class="pill dark">DEMO • SEM DADOS REAIS</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Agenda Jus 9 • híbrida</div>
+        <h1>Agenda própria para prazos jurídicos, com saída rápida para Google Calendar.</h1>
+        <p>Para o evento, a Agenda Jus 9 funciona localmente no navegador: registra compromissos demonstrativos, gera link para Google Calendar e baixa arquivo ICS. No backend real, ela vira agenda auditável por perfil, DAJ, processo e equipe.</p>
+        <div class="actions">
+          <a class="btn gold" href="#novo">Criar compromisso</a>
+          <a class="btn" href="#semana">Ver semana</a>
+          <a class="btn" href="#plano">Plano de integração</a>
+        </div>
+      </div>
+      <div class="hero-art"><div class="scale">📅</div></div>
+    </section>
+
+    <section class="grid2" id="novo">
+      <article class="card">
+        <h2>Novo compromisso demonstrativo</h2>
+        <form id="agendaForm" class="agenda-form">
+          <label>Título<input id="agendaTitle" required value="Reunião Jus 9 - Web Summit"></label>
+          <label>Tipo
+            <select id="agendaType">
+              <option>Reunião com investidor</option>
+              <option>Prazo jurídico</option>
+              <option>Retorno ao cliente</option>
+              <option>Audiência</option>
+              <option>Aula / laboratório</option>
+              <option>Tarefa de equipe</option>
+            </select>
+          </label>
+          <label>Início<input id="agendaStart" type="datetime-local" required></label>
+          <label>Duração em minutos<input id="agendaDuration" type="number" min="15" step="15" value="45"></label>
+          <label>Local<input id="agendaLocation" value="Riocentro / reunião online"></label>
+          <label class="full">Descrição<textarea id="agendaDescription" rows="4">Compromisso demonstrativo da Agenda Jus 9. Não usar dados reais no MVP público.</textarea></label>
+          <div class="actions">
+            <button class="btn gold" type="submit">Salvar no navegador</button>
+            <button class="btn" type="button" id="googleCalendarButton">Abrir no Google Calendar</button>
+            <button class="btn" type="button" id="icsButton">Baixar ICS</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>Prioridade para funcionar no evento</h2>
+        <div class="timeline">
+          <div><strong>Agora:</strong> agenda própria, localStorage, link Google e ICS.</div>
+          <div><strong>Próximo pacote:</strong> API local com autenticação, logs e rotas por perfil.</div>
+          <div><strong>Produção:</strong> OAuth Google, permissões por usuário, auditoria e cofre.</div>
+          <div><strong>Regra:</strong> dados reais só depois de backend seguro e revisão humana.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid2" id="semana">
+      <article class="card">
+        <h2>Compromissos salvos</h2>
+        <div class="schedule" id="agendaSaved"></div>
+      </article>
+      <article class="card">
+        <h2>Semana demonstrativa Web Summit</h2>
+        <div class="schedule">
+          <div class="event"><b>SEG 08/06</b><span>Manhã</span><span>Check-in, mapa do Riocentro, reconhecimento e primeiras conversas.</span><span class="status">Evento</span></div>
+          <div class="event"><b>TER 09/06</b><span>Tarde</span><span>Reuniões com investidores, bancos e parceiros.</span><span class="status">Captação</span></div>
+          <div class="event"><b>QUA 10/06</b><span>Dia todo</span><span>Demonstração dos MVPs e registro de leads.</span><span class="status">Demo</span></div>
+          <div class="event"><b>QUI 11/06</b><span>Final</span><span>Follow-up quente, próximos passos e backup dos contatos.</span><span class="status">Fechamento</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card" id="plano">
+      <h2>Integração Google Calendar: decisão técnica</h2>
+      <p>A decisão recomendada é híbrida: a Jus 9 mantém agenda própria para prazos, vínculos jurídicos, sigilo, auditoria e governança; o Google Calendar entra como espelho de lembrete e convite, sem carregar dados sensíveis.</p>
+      <div class="cards3">
+        <article class="notice"><strong>Agenda Jus 9</strong><br>Fonte da verdade, com DAJ, processo, cliente, responsável, logs e permissões.</article>
+        <article class="notice"><strong>Google Calendar</strong><br>Lembrete externo, convite e disponibilidade, com descrição mínima e sem segredo.</article>
+        <article class="notice"><strong>Backend seguro</strong><br>OAuth, token guardado no servidor, criptografia, revogação e trilha de auditoria.</article>
+      </div>
+    </section>
+  </main>
+</div>
+<footer class="footer">© Jus 9 Tecnologia Jurídica — software livre, autoria preservada.</footer>
+<script>
+const agendaKey = "jus9_agenda_demo_v1";
+const pad = (n) => String(n).padStart(2, "0");
+const fmt = (date) => `${date.getFullYear()}${pad(date.getMonth()+1)}${pad(date.getDate())}T${pad(date.getHours())}${pad(date.getMinutes())}00`;
+
+function agendaEvent() {
+  const start = new Date(document.getElementById("agendaStart").value);
+  const duration = Number(document.getElementById("agendaDuration").value || 45);
+  const end = new Date(start.getTime() + duration * 60000);
+  return {
+    title: document.getElementById("agendaTitle").value,
+    type: document.getElementById("agendaType").value,
+    start: start.toISOString(),
+    end: end.toISOString(),
+    location: document.getElementById("agendaLocation").value,
+    description: document.getElementById("agendaDescription").value
+  };
+}
+
+function savedEvents() {
+  try { return JSON.parse(localStorage.getItem(agendaKey) || "[]"); } catch { return []; }
+}
+
+function saveEvents(events) {
+  localStorage.setItem(agendaKey, JSON.stringify(events));
+}
+
+function googleUrl(event) {
+  const start = new Date(event.start);
+  const end = new Date(event.end);
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${fmt(start)}/${fmt(end)}`,
+    details: `${event.type}. ${event.description}`,
+    location: event.location
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+function downloadIcs(event) {
+  const start = new Date(event.start);
+  const end = new Date(event.end);
+  const ics = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Jus 9 Tecnologia Juridica//Agenda MVP//PT-BR",
+    "BEGIN:VEVENT",
+    `UID:${Date.now()}@jus9tecnologia.com.br`,
+    `DTSTAMP:${fmt(new Date())}`,
+    `DTSTART:${fmt(start)}`,
+    `DTEND:${fmt(end)}`,
+    `SUMMARY:${event.title}`,
+    `LOCATION:${event.location}`,
+    `DESCRIPTION:${event.type} - ${event.description}`,
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+  const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "agenda-jus9-compromisso.ics";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function renderSaved() {
+  const box = document.getElementById("agendaSaved");
+  const events = savedEvents();
+  if (!events.length) {
+    box.innerHTML = '<div class="notice">Nenhum compromisso salvo ainda neste navegador.</div>';
+    return;
+  }
+  box.innerHTML = events.map((event) => {
+    const start = new Date(event.start);
+    return `<div class="event"><b>${pad(start.getDate())}/${pad(start.getMonth()+1)}</b><span>${pad(start.getHours())}:${pad(start.getMinutes())}</span><span>${event.title}<br><small>${event.type} • ${event.location}</small></span><span class="status">Salvo</span></div>`;
+  }).join("");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const now = new Date();
+  now.setDate(now.getDate() + 1);
+  now.setHours(10, 0, 0, 0);
+  document.getElementById("agendaStart").value = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  renderSaved();
+  document.getElementById("agendaForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const item = agendaEvent();
+    const events = savedEvents();
+    events.unshift(item);
+    saveEvents(events.slice(0, 12));
+    renderSaved();
+  });
+  document.getElementById("googleCalendarButton").addEventListener("click", () => window.open(googleUrl(agendaEvent()), "_blank", "noopener"));
+  document.getElementById("icsButton").addEventListener("click", () => downloadIcs(agendaEvent()));
+});
+</script>
+<script src="assets/js/pwa-install.js"></script>
+</body>
+</html>
