@@ -19,7 +19,7 @@ Estabilizar os MVPs Professor(a) e Estudante dentro do chat proprio de MVP da Ju
   - rascunho salvo no navegador;
   - fluxo de resumo, trabalho academico, simulado, grupo e integridade;
   - ponte para Agenda Jus 9 e IA educacional;
-  - demo corrigido para `demo3@jus9tecnologia.com.br`.
+  - demo alinhado com a tela geral de acesso em `demo5@jus9tecnologia.com.br`.
 
 ## Limites
 
