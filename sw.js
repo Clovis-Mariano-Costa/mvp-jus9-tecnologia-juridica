@@ -1,6 +1,8 @@
-const JUS9_MVP_CACHE = 'jus9-mvp-pwa-v2';
+const JUS9_MVP_CACHE = 'jus9-mvp-pwa-v3-agenda';
 const JUS9_MVP_ASSETS = [
   '/',
+  '/acessar-mvp.html',
+  '/login.html',
   '/app.html',
   '/index.html',
   '/selecionar-perfil.html',
