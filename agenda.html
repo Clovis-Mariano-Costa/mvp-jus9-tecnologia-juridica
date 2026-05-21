@@ -17,6 +17,11 @@
     .agenda-form .full{grid-column:1/-1}
     .agenda-form .actions{grid-column:1/-1;margin-top:.2rem}
     .agenda-form .btn:not(.gold){background:#fffdf8;color:#071323}
+    .contract-status{margin-top:1rem}
+    .contract-status strong{display:block;margin-bottom:.35rem}
+    .contract-status.ok{border-color:#9bc28a;background:#f6fff2}
+    .contract-status.warn{border-color:#d8c9aa;background:#fffdf8}
+    .contract-status.error{border-color:#dfb4a8;background:#fff8f5}
     @media(max-width:760px){.agenda-form{grid-template-columns:1fr}}
   </style>
 </head>
@@ -88,11 +93,15 @@
           <label>Local<input id="agendaLocation" value="Reuniao online / local ficticio"></label>
           <label class="full">Descricao<textarea id="agendaDescription" rows="4">Compromisso demonstrativo da Agenda Jus 9. Nao usar dados reais no MVP publico.</textarea></label>
           <div class="actions">
-            <button class="btn gold" type="submit">Salvar no navegador</button>
+            <button class="btn gold" type="submit">Salvar e validar contrato</button>
             <button class="btn" type="button" id="googleCalendarButton">Abrir no Google Calendar</button>
             <button class="btn" type="button" id="icsButton">Baixar ICS</button>
           </div>
         </form>
+        <div id="agendaBackendStatus" class="notice contract-status warn" role="status" aria-live="polite">
+          <strong>Integracao Google Calendar em modo contrato</strong>
+          <span>A Agenda salva offline no navegador. Quando o backend local estiver ligado, este MVP valida o contrato em <code>POST /api/agenda/events</code>, sem enviar evento real ao Google.</span>
+        </div>
       </article>
 
       <article class="card">
@@ -136,8 +145,23 @@
 <footer class="footer">© Jus 9 Tecnologia Juridica - software livre, autoria preservada.</footer>
 <script>
 const agendaKey = "jus9_agenda_demo_v1";
+const agendaBackendEndpoint = "http://127.0.0.1:3000/api/agenda/events";
+const agendaTimezone = "America/Sao_Paulo";
 const pad = (n) => String(n).padStart(2, "0");
 const fmt = (date) => `${date.getFullYear()}${pad(date.getMonth()+1)}${pad(date.getDate())}T${pad(date.getHours())}${pad(date.getMinutes())}00`;
+const offsetIso = (date) => {
+  const offset = -date.getTimezoneOffset();
+  const sign = offset >= 0 ? "+" : "-";
+  const abs = Math.abs(offset);
+  return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:00${sign}${pad(Math.floor(abs/60))}:${pad(abs%60)}`;
+};
+
+function setBackendStatus(kind, message) {
+  const box = document.getElementById("agendaBackendStatus");
+  if (!box) return;
+  box.className = `notice contract-status ${kind}`;
+  box.innerHTML = `<strong>Integracao Google Calendar em modo contrato</strong><span>${message}</span>`;
+}
 
 function agendaEvent() {
   const start = new Date(document.getElementById("agendaStart").value);
@@ -149,11 +173,49 @@ function agendaEvent() {
   return {
     title: document.getElementById("agendaTitle").value,
     type: document.getElementById("agendaType").value,
-    start: start.toISOString(),
-    end: end.toISOString(),
+    start: offsetIso(start),
+    end: offsetIso(end),
     location: document.getElementById("agendaLocation").value,
     description: document.getElementById("agendaDescription").value
   };
+}
+
+function backendPayload(event) {
+  return {
+    title: event.title || "Retorno demonstrativo Jus 9",
+    start: event.start,
+    end: event.end,
+    timezone: agendaTimezone,
+    classification: "INTERNO / DEMO",
+    source: "mvp-agenda",
+    actor: "Fundador",
+    relatedId: "DAJ-DEMO-001",
+    description: event.description || "Sem dados reais nesta fase."
+  };
+}
+
+async function validateWithLocalBackend(event) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 2500);
+  try {
+    const response = await fetch(agendaBackendEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(backendPayload(event)),
+      signal: controller.signal
+    });
+    if (response.ok) {
+      setBackendStatus("ok", "Evento validado no backend local. Nenhum evento real foi enviado ao Google Calendar.");
+      return true;
+    }
+    setBackendStatus("error", "Backend local respondeu fora do contrato; usando fallback do navegador.");
+    return false;
+  } catch (_) {
+    setBackendStatus("warn", "Backend local indisponivel; usando fallback do navegador.");
+    return false;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 function savedEvents() {
@@ -223,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
   now.setHours(10, 0, 0, 0);
   document.getElementById("agendaStart").value = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
   renderSaved();
-  document.getElementById("agendaForm").addEventListener("submit", (event) => {
+  document.getElementById("agendaForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     try {
       const item = agendaEvent();
@@ -231,6 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
       events.unshift(item);
       saveEvents(events.slice(0, 12));
       renderSaved();
+      setBackendStatus("warn", "Compromisso salvo offline. Validando contrato com o backend local, sem Google OAuth real...");
+      await validateWithLocalBackend(item);
     } catch (error) {
       alert(error.message);
     }

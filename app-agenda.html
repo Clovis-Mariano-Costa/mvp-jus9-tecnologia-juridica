@@ -32,9 +32,10 @@
       <div class="grid-3">
         <div class="card"><h3>Prazos</h3><p>Controle demonstrativo de prazos, retornos e datas criticas.</p></div>
         <div class="card"><h3>Compromissos</h3><p>Audiencias, reunioes, diligencias, atendimentos e tarefas com data.</p></div>
-        <div class="card"><h3>Integracao futura</h3><p>Google Calendar com OAuth apenas em pacote seguro de backend e autenticacao.</p></div>
+        <div class="card"><h3>Integracao em contrato</h3><p>Backend local valida o contrato da Agenda; Google Calendar real fica bloqueado ate OAuth seguro.</p></div>
       </div>
       <div class="notice" style="margin-top:1rem"><strong>Demo:</strong> nao use dados reais de cliente, processo, WhatsApp, documento pessoal ou cofre.</div>
+      <div class="notice" style="margin-top:1rem"><strong>Contrato local:</strong> a Agenda completa tenta enviar evento demonstrativo para <code>POST http://127.0.0.1:3000/api/agenda/events</code>. Se o backend estiver desligado, o MVP segue offline com localStorage, ICS e link de Google Calendar.</div>
       <div class="actions">
         <a class="btn gold" href="agenda.html">Abrir Agenda completa</a>
         <a class="btn" href="app-painel.html">Voltar ao painel</a>
