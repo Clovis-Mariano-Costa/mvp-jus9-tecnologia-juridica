@@ -1,13 +1,139 @@
-﻿<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MVP Estudante | Jus 9</title><link rel="stylesheet" href="../assets/css/mvp-v14.css"><link rel="stylesheet" href="../assets/css/visual-mvp-fase2.css"></head>
-<body><header><nav><a class="primary" href="../index.html">MVP Jus 9</a><a href="../selecionar-perfil.html">Perfis</a><a href="../agenda.html">Agenda Jus 9</a><a href="https://www.jus9tecnologia.com.br/equipe/">Equipe</a><a href="https://investimentos.jus9tecnologia.com.br/">Investidores</a><a href="https://charlieecho.jus9tecnologia.com.br/">Charlie Echo</a></nav></header>
-<main class="profile-shell"><section class="profile-hero"><div class="hero-copy"><span class="badge">Cadastro Lider</span><h1>MVP Estudante</h1><p><strong>Dossie de estudos juridicos</strong></p><p>Rotina de estudos, trabalhos, resumos, simulados, perguntas e agenda.</p><div class="actions"><a class="btn" href="../agenda.html">Plano de estudos</a>
-<a class="btn" href="../agenda.html">Resumo</a>
-<a class="btn" href="../agenda.html">Trabalho</a>
-<a class="btn" href="../agenda.html">Simulado</a>
-<a class="btn" href="../agenda.html">Agenda</a></div></div><aside class="status-rail"><div class="status-item"><span class="status-dot"></span><div><b>Acesso demonstrativo</b><br><code>demo5@jus9tecnologia.com.br</code><br><span class="small">Sem dados reais no MVP publico.</span></div></div><div class="status-item"><span class="status-dot"></span><div><b>Revisao humana</b><br><span class="small">Apoio informativo e organizacional. Nao substitui professor, profissional habilitado ou autoridade competente.</span></div></div><div class="status-item"><span class="status-dot"></span><div><b>Governanca</b><br><span class="small">Classificacao, autoria preservada e controle de publicacao.</span></div></div></aside></section><section class="profile-band"><h2>Fluxo principal</h2><div class="trust-list"><span>Planejar</span><span>Organizar</span><span>Revisar</span><span>Registrar</span></div></section><section class="workbench"><article class="module-card"><h3>Plano de estudos</h3><p>Organizar materias, horarios, prioridade, revisao e metas.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Resumo</h3><p>Estruturar fichamentos, mapas mentais e perguntas para revisao.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Trabalho academico</h3><p>Controlar tema, fontes, sumario, citacoes e entrega.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Simulados</h3><p>Criar questoes, registrar desempenho e revisar erros.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Grupo</h3><p>Conectar tarefas de grupo, encontros e materiais.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Cuidado</h3><p>Evitar plagio, preservar autoria e validar informacoes.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article></section></main><footer>© Jus 9 Tecnologia Juridica - software livre, autoria preservada. Recordo da face ancestral. Registro: 2026-05-17 23:06:23.82833 -03:00.</footer><script src="../assets/js/mvp-v14.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MVP Estudante | Jus 9</title>
+  <meta name="description" content="MVP Estudante da Jus 9: plano de estudos, resumo, trabalho academico, simulado e agenda em modo demonstrativo.">
+  <link rel="stylesheet" href="../assets/css/mvp-v14.css">
+  <link rel="stylesheet" href="../assets/css/visual-mvp-fase2.css">
+  <meta name="theme-color" content="#07111f">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <style>
+    .study-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    .study-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+    .study-form label{display:grid;gap:.35rem;font-weight:900;color:#0b1a33}
+    .study-form .full{grid-column:1/-1}
+    .study-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.75rem}
+    .study-output{white-space:pre-wrap;min-height:180px}
+    @media(max-width:860px){.study-grid,.study-form{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="primary" href="../index.html">MVP Jus 9</a>
+    <a href="../selecionar-perfil.html">Perfis</a>
+    <a href="../agenda.html">Agenda Jus 9</a>
+    <a href="../app-painel.html">Painel</a>
+    <a href="../ia-estudantes.html">IA Educacional</a>
+    <a href="grupo-estudantes.html">Grupo de estudantes</a>
+  </nav>
+</header>
+
+<main class="profile-shell">
+  <section class="profile-hero">
+    <div class="hero-copy">
+      <span class="badge">MVP Estudante - DEMO</span>
+      <h1>Plano de estudos, resumo e rotina academica com responsabilidade.</h1>
+      <p><strong>Um ambiente demonstrativo para organizar materias, trabalhos, simulados, revisoes e agenda sem usar dados reais.</strong></p>
+      <p>Este MVP nao entrega resposta pronta para burlar autoria. Ele ajuda a estruturar estudo, registrar fontes e lembrar que todo trabalho academico precisa de revisao humana.</p>
+      <div class="actions">
+        <a class="btn primary" href="#plano-estudos">Montar plano de estudos</a>
+        <a class="btn" href="../agenda.html">Agendar revisao</a>
+        <a class="btn" href="../ia-estudantes.html">Abrir IA educacional</a>
+      </div>
+    </div>
+    <aside class="status-rail">
+      <div class="status-item"><span class="status-dot"></span><div><b>Acesso demonstrativo</b><br><code>demo3@jus9tecnologia.com.br</code><br><span class="small">Senha demo: Jus9MVP#2026</span></div></div>
+      <div class="status-item"><span class="status-dot"></span><div><b>Sem dados reais</b><br><span class="small">Nao inserir nome real de colega, professor, processo, documento pessoal ou conversa privada.</span></div></div>
+      <div class="status-item"><span class="status-dot"></span><div><b>Autoria preservada</b><br><span class="small">A IA pode explicar e organizar. O estudante deve estudar, revisar, citar fontes e assumir autoria.</span></div></div>
+    </aside>
+  </section>
+
+  <section class="profile-band">
+    <h2>Fluxo principal do Estudante</h2>
+    <div class="trust-list"><span>Planejar</span><span>Estudar</span><span>Resumir</span><span>Simular</span><span>Revisar</span></div>
+  </section>
+
+  <section class="study-grid" id="plano-estudos">
+    <article class="card">
+      <h2>Construtor demonstrativo de plano de estudos</h2>
+      <p class="small">Use temas ficticios ou materias genericas. O rascunho fica salvo apenas neste navegador.</p>
+      <form id="studentForm" class="study-form">
+        <label>Materia<input id="studySubject" value="Direito Constitucional"></label>
+        <label>Objetivo da semana<input id="studyGoal" value="Revisar controle de constitucionalidade"></label>
+        <label>Tempo disponivel<input id="studyTime" value="3 blocos de 45 minutos"></label>
+        <label>Classificacao<input id="studyClassification" value="INTERNO / DEMO" readonly></label>
+        <label class="full">Fontes permitidas<textarea id="studySources">Apostila publica, lei seca, livro indicado pelo professor e anotacoes proprias ficticias.</textarea></label>
+        <label class="full">Duvida para revisar<textarea id="studyQuestion">Qual e a diferenca entre controle difuso e concentrado?</textarea></label>
+      </form>
+      <div class="study-actions">
+        <button class="btn primary" type="button" id="saveStudentPlan">Salvar plano local</button>
+        <a class="btn" href="../agenda.html">Criar horario na Agenda</a>
+      </div>
+      <div class="notice" id="studentFeedback">Modo demonstrativo: nada e enviado a servidor, Google ou IA real.</div>
+    </article>
+
+    <article class="card">
+      <h2>Plano salvo</h2>
+      <div id="studentOutput" class="notice study-output">Nenhum plano salvo ainda neste navegador.</div>
+    </article>
+  </section>
+
+  <section class="workbench">
+    <article class="module-card"><h3>Plano de estudos</h3><p>Materias, blocos de tempo, metas e revisoes.</p><a class="btn" href="#plano-estudos">Abrir modulo</a></article>
+    <article class="module-card"><h3>Resumo</h3><p>Fichamento, mapa mental, perguntas e pontos de atencao.</p><a class="btn" href="#plano-estudos">Criar resumo</a></article>
+    <article class="module-card"><h3>Trabalho academico</h3><p>Tema, problema, fontes, sumario e cronograma.</p><a class="btn" href="../agenda.html">Agendar entrega</a></article>
+    <article class="module-card"><h3>Simulado</h3><p>Questoes ficticias, desempenho e revisao de erros.</p><a class="btn" href="#plano-estudos">Preparar simulado</a></article>
+    <article class="module-card"><h3>Grupo</h3><p>Conectar tarefas coletivas sem expor dados reais de colegas.</p><a class="btn" href="grupo-estudantes.html">Ver grupo</a></article>
+    <article class="module-card"><h3>Integridade</h3><p>Autoria, citacao, fonte, revisao humana e limite da IA.</p><a class="btn" href="../ia-estudantes.html">Ver IA educacional</a></article>
+  </section>
+</main>
+
+<footer>© Jus 9 Tecnologia Juridica - software livre, autoria preservada. MVP Estudante em modo demonstrativo.</footer>
+<script>
+const studentKey = "jus9_mvp_estudante_demo_v1";
+function studentDraft() {
+  return {
+    subject: document.getElementById("studySubject").value,
+    goal: document.getElementById("studyGoal").value,
+    time: document.getElementById("studyTime").value,
+    classification: document.getElementById("studyClassification").value,
+    sources: document.getElementById("studySources").value,
+    question: document.getElementById("studyQuestion").value
+  };
+}
+function renderStudentDraft(draft) {
+  const output = document.getElementById("studentOutput");
+  if (!draft) {
+    output.textContent = "Nenhum plano salvo ainda neste navegador.";
+    return;
+  }
+  output.textContent = [
+    `Materia: ${draft.subject}`,
+    `Objetivo: ${draft.goal}`,
+    `Tempo: ${draft.time}`,
+    `Classificacao: ${draft.classification}`,
+    "",
+    `Fontes: ${draft.sources}`,
+    "",
+    `Duvida: ${draft.question}`,
+    "",
+    "Status: plano local, sem envio para Google, IA real ou backend."
+  ].join("\n");
+}
+document.addEventListener("DOMContentLoaded", () => {
+  try { renderStudentDraft(JSON.parse(localStorage.getItem(studentKey) || "null")); } catch { renderStudentDraft(null); }
+  document.getElementById("saveStudentPlan").addEventListener("click", () => {
+    const draft = studentDraft();
+    localStorage.setItem(studentKey, JSON.stringify(draft));
+    renderStudentDraft(draft);
+    document.getElementById("studentFeedback").textContent = "Plano de estudos salvo localmente. Preserve autoria, fontes e revisao humana.";
+  });
+});
+</script>
+<script src="../assets/js/mvp-v14.js"></script>
+<script src="../assets/js/pwa-install.js"></script>
+</body>
+</html>

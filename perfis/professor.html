@@ -1,13 +1,141 @@
-﻿<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MVP Professor(a) | Jus 9</title><link rel="stylesheet" href="../assets/css/mvp-v14.css"><link rel="stylesheet" href="../assets/css/visual-mvp-fase2.css"></head>
-<body><header><nav><a class="primary" href="../index.html">MVP Jus 9</a><a href="../selecionar-perfil.html">Perfis</a><a href="../agenda.html">Agenda Jus 9</a><a href="https://www.jus9tecnologia.com.br/equipe/">Equipe</a><a href="https://investimentos.jus9tecnologia.com.br/">Investidores</a><a href="https://charlieecho.jus9tecnologia.com.br/">Charlie Echo</a></nav></header>
-<main class="profile-shell"><section class="profile-hero"><div class="hero-copy"><span class="badge">Cadastro Lider</span><h1>MVP Professor(a)</h1><p><strong>Dossie Academico e plano de aula</strong></p><p>Aulas, casos, bibliografia, avaliacao, turmas e agenda academica.</p><div class="actions"><a class="btn" href="../agenda.html">Preparar aula</a>
-<a class="btn" href="../agenda.html">Criar caso</a>
-<a class="btn" href="../agenda.html">Agenda academica</a>
-<a class="btn" href="../agenda.html">Bibliografia</a>
-<a class="btn" href="../agenda.html">Turmas</a></div></div><aside class="status-rail"><div class="status-item"><span class="status-dot"></span><div><b>Acesso demonstrativo</b><br><code>demo2@jus9tecnologia.com.br</code><br><span class="small">Sem dados reais no MVP publico.</span></div></div><div class="status-item"><span class="status-dot"></span><div><b>Revisao humana</b><br><span class="small">Apoio informativo e organizacional. Nao substitui professor, profissional habilitado ou autoridade competente.</span></div></div><div class="status-item"><span class="status-dot"></span><div><b>Governanca</b><br><span class="small">Classificacao, autoria preservada e controle de publicacao.</span></div></div></aside></section><section class="profile-band"><h2>Fluxo principal</h2><div class="trust-list"><span>Planejar</span><span>Organizar</span><span>Revisar</span><span>Registrar</span></div></section><section class="workbench"><article class="module-card"><h3>Plano de aula</h3><p>Organizar tema, objetivos, bibliografia, metodologia e atividades.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Estudo de caso</h3><p>Preparar caso juridico, perguntas, documentos e debate supervisionado.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Turmas</h3><p>Cadastrar turma, grupos, monitores e entregas demonstrativas.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Avaliacao</h3><p>Criar rubricas, questoes e checklists para revisao docente.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Agenda academica</h3><p>Controlar aulas, provas, orientacoes, bancas e retornos.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article>
-<article class="module-card"><h3>Materiais</h3><p>Separar leituras, modelos, anexos e versoes publicas.</p><a class="btn" href="../agenda.html">Abrir modulo</a></article></section></main><footer>© Jus 9 Tecnologia Juridica - software livre, autoria preservada. Recordo da face ancestral. Registro: 2026-05-17 23:06:23.82833 -03:00.</footer><script src="../assets/js/mvp-v14.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MVP Professor(a) | Jus 9</title>
+  <meta name="description" content="MVP Professor(a) da Jus 9: plano de aula, estudo de caso, turma, bibliografia e agenda academica em modo demonstrativo.">
+  <link rel="stylesheet" href="../assets/css/mvp-v14.css">
+  <link rel="stylesheet" href="../assets/css/visual-mvp-fase2.css">
+  <meta name="theme-color" content="#07111f">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <style>
+    .profile-note{display:grid;gap:.5rem;margin-top:1rem}
+    .edu-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;margin-top:1rem}
+    .edu-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+    .edu-form label{display:grid;gap:.35rem;font-weight:900;color:#0b1a33}
+    .edu-form .full{grid-column:1/-1}
+    .edu-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.75rem}
+    .demo-output{white-space:pre-wrap;min-height:180px}
+    .module-card strong{display:block;margin-bottom:.25rem}
+    @media(max-width:860px){.edu-grid,.edu-form{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="primary" href="../index.html">MVP Jus 9</a>
+    <a href="../selecionar-perfil.html">Perfis</a>
+    <a href="../agenda.html">Agenda Jus 9</a>
+    <a href="../app-painel.html">Painel</a>
+    <a href="../ia-estudantes.html">IA Educacional</a>
+    <a href="https://www.jus9tecnologia.com.br/equipe/">Equipe</a>
+  </nav>
+</header>
+
+<main class="profile-shell">
+  <section class="profile-hero">
+    <div class="hero-copy">
+      <span class="badge">MVP Professor(a) - DEMO</span>
+      <h1>Dossie academico, plano de aula e estudo de caso.</h1>
+      <p><strong>Para professoras, professores, orientadores, mestres e doutores que precisam organizar aula, turma, bibliografia e agenda com governanca.</strong></p>
+      <p>Este MVP funciona no navegador, sem dados reais e sem login real. O Google Calendar permanece como modo contrato: agenda propria primeiro, espelho externo so quando houver backend seguro.</p>
+      <div class="actions">
+        <a class="btn primary" href="#plano-aula">Montar plano de aula</a>
+        <a class="btn" href="../agenda.html">Agendar aula demo</a>
+        <a class="btn" href="professor-mestre-doutor.html">Ver perfil amplo</a>
+      </div>
+    </div>
+    <aside class="status-rail">
+      <div class="status-item"><span class="status-dot"></span><div><b>Acesso demonstrativo</b><br><code>demo2@jus9tecnologia.com.br</code><br><span class="small">Senha demo: Jus9MVP#2026</span></div></div>
+      <div class="status-item"><span class="status-dot"></span><div><b>Sem dados reais</b><br><span class="small">Nao inserir nome real de aluno, cliente, processo, WhatsApp, documento pessoal ou cofre.</span></div></div>
+      <div class="status-item"><span class="status-dot"></span><div><b>Revisao humana</b><br><span class="small">A IA pode apoiar organizacao. A decisao pedagogica e a responsabilidade academica permanecem humanas.</span></div></div>
+    </aside>
+  </section>
+
+  <section class="profile-band">
+    <h2>Fluxo principal do Professor</h2>
+    <div class="trust-list"><span>Planejar aula</span><span>Preparar caso</span><span>Organizar turma</span><span>Agendar retorno</span><span>Registrar autoria</span></div>
+  </section>
+
+  <section class="edu-grid" id="plano-aula">
+    <article class="card">
+      <h2>Construtor demonstrativo de plano de aula</h2>
+      <p class="small">Preencha apenas dados ficticios. O rascunho fica salvo neste navegador.</p>
+      <form id="professorForm" class="edu-form">
+        <label>Tema da aula<input id="lessonTopic" value="Responsabilidade civil em contratos digitais"></label>
+        <label>Turma ficticia<input id="lessonClass" value="Turma demo - Direito Civil"></label>
+        <label>Duracao<input id="lessonDuration" value="50 minutos"></label>
+        <label>Classificacao<input id="lessonClassification" value="INTERNO / DEMO" readonly></label>
+        <label class="full">Objetivo<textarea id="lessonGoal">Explicar conceitos essenciais, discutir um caso ficticio e registrar duvidas para revisao humana.</textarea></label>
+        <label class="full">Bibliografia demonstrativa<textarea id="lessonBibliography">Usar apenas referencias publicas ou ficticias nesta fase do MVP.</textarea></label>
+      </form>
+      <div class="edu-actions">
+        <button class="btn primary" type="button" id="saveProfessorPlan">Salvar rascunho local</button>
+        <a class="btn" href="../agenda.html">Levar para Agenda</a>
+      </div>
+      <div class="notice" id="professorFeedback">Modo demonstrativo: nada e enviado a servidor, Google ou IA real.</div>
+    </article>
+
+    <article class="card">
+      <h2>Rascunho gerado</h2>
+      <div id="professorOutput" class="notice demo-output">Nenhum plano salvo ainda neste navegador.</div>
+    </article>
+  </section>
+
+  <section class="workbench">
+    <article class="module-card"><h3>Plano de aula</h3><p>Objetivos, metodo, conteudo, atividade, tempo e revisao.</p><a class="btn" href="#plano-aula">Abrir modulo</a></article>
+    <article class="module-card"><h3>Estudo de caso</h3><p>Caso ficticio, perguntas, fundamentos e debate supervisionado.</p><a class="btn" href="#plano-aula">Preparar caso</a></article>
+    <article class="module-card"><h3>Turmas</h3><p>Grupos demonstrativos, monitores, entregas e calendario.</p><a class="btn" href="../agenda.html">Agendar turma</a></article>
+    <article class="module-card"><h3>Bibliografia</h3><p>Referencias publicas, leituras, fichamentos e materiais permitidos.</p><a class="btn" href="#plano-aula">Organizar</a></article>
+    <article class="module-card"><h3>Avaliacao</h3><p>Rubrica, criterios, feedback e registro de revisao humana.</p><a class="btn" href="#plano-aula">Montar rubrica</a></article>
+    <article class="module-card"><h3>Integridade</h3><p>Autoria, fonte, LGPD, consentimento e limites da IA educacional.</p><a class="btn" href="../ia-estudantes.html">Ver IA educacional</a></article>
+  </section>
+</main>
+
+<footer>© Jus 9 Tecnologia Juridica - software livre, autoria preservada. MVP Professor em modo demonstrativo.</footer>
+<script>
+const professorKey = "jus9_mvp_professor_demo_v1";
+function professorDraft() {
+  return {
+    topic: document.getElementById("lessonTopic").value,
+    turma: document.getElementById("lessonClass").value,
+    duration: document.getElementById("lessonDuration").value,
+    classification: document.getElementById("lessonClassification").value,
+    goal: document.getElementById("lessonGoal").value,
+    bibliography: document.getElementById("lessonBibliography").value
+  };
+}
+function renderProfessorDraft(draft) {
+  const output = document.getElementById("professorOutput");
+  if (!draft) {
+    output.textContent = "Nenhum plano salvo ainda neste navegador.";
+    return;
+  }
+  output.textContent = [
+    `Tema: ${draft.topic}`,
+    `Turma: ${draft.turma}`,
+    `Duracao: ${draft.duration}`,
+    `Classificacao: ${draft.classification}`,
+    "",
+    `Objetivo: ${draft.goal}`,
+    "",
+    `Bibliografia: ${draft.bibliography}`,
+    "",
+    "Status: rascunho local, sem envio para Google, IA real ou backend."
+  ].join("\n");
+}
+document.addEventListener("DOMContentLoaded", () => {
+  try { renderProfessorDraft(JSON.parse(localStorage.getItem(professorKey) || "null")); } catch { renderProfessorDraft(null); }
+  document.getElementById("saveProfessorPlan").addEventListener("click", () => {
+    const draft = professorDraft();
+    localStorage.setItem(professorKey, JSON.stringify(draft));
+    renderProfessorDraft(draft);
+    document.getElementById("professorFeedback").textContent = "Plano de aula salvo localmente. Use apenas dados ficticios nesta fase.";
+  });
+});
+</script>
+<script src="../assets/js/mvp-v14.js"></script>
+<script src="../assets/js/pwa-install.js"></script>
+</body>
+</html>
