@@ -8,7 +8,7 @@ Use estes destinos sempre que houver referência pública correspondente:
 - MVP: https://www.jus9tecnologia.com.br/mvp
 - Charlie Echo: https://charlieecho.jus9tecnologia.com.br/
 - Charlie Echo Social / Inteligência Artificial CRETA: https://jus9verde.jus9tecnologia.com.br/charlie-echo-social#chat-social
-- Jus9 Verde: https://jus9verde.jus9tecnologia.com.br/
+- Jus 9 Verde: https://jus9verde.jus9tecnologia.com.br/
 - Livros: https://livros.jus9tecnologia.com.br/
 - Carta: https://carta.jus9tecnologia.com.br/
 - Olá Mundo do Fundador / Aeon Primevo: https://olamundo.aeonprimevo.com.br/
@@ -16,6 +16,6 @@ Use estes destinos sempre que houver referência pública correspondente:
 
 ## Regra semântica
 
-Sempre que aparecerem termos públicos como “Equipe”, “Investidores”, “MVP”, “Charlie Echo”, “Charlie Echo Social”, “Inteligência Artificial CRETA”, “Jus9 Verde”, “Política de Privacidade”, “Termos de Uso” ou “Contato”, verificar se há link clicável para a página pública adequada.
+Sempre que aparecerem termos públicos como “Equipe”, “Investidores”, “MVP”, “Charlie Echo”, “Charlie Echo Social”, “Inteligência Artificial CRETA”, “Jus 9 Verde”, “Política de Privacidade”, “Termos de Uso” ou “Contato”, verificar se há link clicável para a página pública adequada.
 
 Não criar links públicos para conteúdo secreto, cofre, dados sigilosos, chaves, tokens, `.env`, documentos de cliente ou segredo de justiça.
