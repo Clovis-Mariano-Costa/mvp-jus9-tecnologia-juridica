@@ -30,7 +30,7 @@
     .login-list{display:grid;gap:8px;margin-top:14px;font-size:14px}
     .login-row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dashed #e0c58f;padding-bottom:8px}
     .pill{display:inline-block;border:1px solid #f0d99d;border-radius:999px;padding:7px 11px;margin:4px;font-size:13px;color:#9a6818;background:#fffaf0}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.photo-demo-field{border:1px solid #ead7aa;border-radius:18px;background:#fffaf0;padding:14px;margin:16px 0}.photo-demo-control{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;align-items:center}.photo-demo-preview{width:92px;height:92px;border-radius:18px;border:1px solid #d7c195;background:linear-gradient(135deg,#091522,#26364a);color:#ffd98a;display:grid;place-items:center;font-weight:900;letter-spacing:.08em;overflow:hidden}.photo-demo-preview img{width:100%;height:100%;object-fit:cover;display:block}.photo-demo-note{display:block;margin-top:7px;color:#6d4b14;line-height:1.45}.photo-demo-clear{margin-top:8px;border:1px solid #d7c195;border-radius:999px;background:#fff;color:#091522;font-weight:800;padding:8px 12px;cursor:pointer}
     @media(max-width:900px){main{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
   </style>
 <link rel="stylesheet" href="assets/css/visual-mvp-fase2.css"><meta name="theme-color" content="#07111f"><link rel="manifest" href="manifest.webmanifest"></head>
@@ -91,6 +91,7 @@
     </div>
 
     <form onsubmit="event.preventDefault(); alert('Acesso demonstrativo: escolha de perfil/cadastro líder em MVP estático.');">
+      <div class="photo-demo-field" data-demo-photo-field><label>Foto/avatar demonstrativo do lider (opcional)</label><div class="photo-demo-control"><div class="photo-demo-preview" data-demo-photo-preview>LIDER</div><div><input type="file" accept="image/*" data-demo-photo-input><small class="photo-demo-note">Use imagem ficticia ou avatar institucional. Nao envie documento ou foto real obrigatoria.</small><button class="photo-demo-clear" type="button" data-demo-photo-clear>Remover imagem</button></div></div></div>
       <span class="field"><label for="email">E-mail</label><input id="email" name="email" value="demo1@jus9tecnologia.com.br"></span>
       <span class="field"><label for="senha">Senha</label><input id="senha" name="senha" type="password" value="Jus9MVP2026"></span>
       <button class="btn" type="submit">Entrar no ambiente MVP</button>
@@ -103,5 +104,5 @@
     </p>
   </section>
 </main>
-<script src="assets/js/pwa-install.js"></script></body>
+<script>(function(){document.querySelectorAll('[data-demo-photo-field]').forEach(function(field){var input=field.querySelector('[data-demo-photo-input]'),preview=field.querySelector('[data-demo-photo-preview]'),clear=field.querySelector('[data-demo-photo-clear]');if(!input||!preview)return;var original=preview.textContent||'IMG';input.addEventListener('change',function(){var file=input.files&&input.files[0];if(!file)return;if(!file.type||file.type.indexOf('image/')!==0){input.value='';alert('Use apenas imagem demonstrativa neste campo.');return;}var reader=new FileReader();reader.onload=function(event){preview.innerHTML='';var img=document.createElement('img');img.src=event.target.result;img.alt='Previa da imagem demonstrativa';preview.appendChild(img);};reader.readAsDataURL(file);});if(clear){clear.addEventListener('click',function(){input.value='';preview.innerHTML=original;});}});})();</script><script src="assets/js/pwa-install.js"></script></body>
 </html>

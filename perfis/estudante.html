@@ -61,6 +61,17 @@
       <h2>Construtor demonstrativo de plano de estudos</h2>
       <p class="small">Use temas ficticios ou materias genericas. O rascunho fica salvo apenas neste navegador.</p>
       <form id="studentForm" class="study-form">
+        <div class="photo-demo-field full" data-demo-photo-field>
+          <label>Foto/avatar demonstrativo do estudante (opcional)</label>
+          <div class="photo-demo-control">
+            <div class="photo-demo-preview" data-demo-photo-preview>EST</div>
+            <div>
+              <input type="file" accept="image/*" data-demo-photo-input>
+              <small class="photo-demo-note">Use imagem ficticia ou avatar. Nao envie foto real de estudante, menor, documento ou conversa privada.</small>
+              <button class="photo-demo-clear" type="button" data-demo-photo-clear>Remover imagem</button>
+            </div>
+          </div>
+        </div>
         <label>Materia<input id="studySubject" value="Direito Constitucional"></label>
         <label>Objetivo da semana<input id="studyGoal" value="Revisar controle de constitucionalidade"></label>
         <label>Tempo disponivel<input id="studyTime" value="3 blocos de 45 minutos"></label>

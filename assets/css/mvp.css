@@ -13,3 +13,11 @@ button,input,select,textarea{max-width:100%}
   .grid,.grid2,.grid-2,.grid-3,.grid-4,.cards3,.profile-grid,.demo-grid,.demo-grid-2,.workbench,.timeline,.footer-grid{grid-template-columns:1fr!important;}
   table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
 }
+
+.photo-demo-field{border:1px solid rgba(217,164,65,.35);border-radius:18px;background:rgba(217,164,65,.08);padding:14px;margin:8px 0}
+.photo-demo-control{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;align-items:center}
+.photo-demo-preview{width:92px;height:92px;border-radius:18px;border:1px solid rgba(255,255,255,.18);background:linear-gradient(135deg,#040a14,#0b1d31);color:#f2d480;display:grid;place-items:center;font-weight:900;letter-spacing:.08em;overflow:hidden}
+.photo-demo-preview img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-demo-note{display:block;margin-top:7px;color:#f9e5aa;line-height:1.45}
+.photo-demo-clear{margin-top:8px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-weight:800;padding:8px 12px;cursor:pointer}
+@media(max-width:760px){.photo-demo-control{grid-template-columns:1fr}.photo-demo-preview{width:100%;height:150px}}

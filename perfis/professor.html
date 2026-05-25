@@ -63,6 +63,17 @@
       <h2>Construtor demonstrativo de plano de aula</h2>
       <p class="small">Preencha apenas dados ficticios. O rascunho fica salvo neste navegador.</p>
       <form id="professorForm" class="edu-form">
+        <div class="photo-demo-field full" data-demo-photo-field>
+          <label>Foto/avatar demonstrativo do professor (opcional)</label>
+          <div class="photo-demo-control">
+            <div class="photo-demo-preview" data-demo-photo-preview>PROF</div>
+            <div>
+              <input type="file" accept="image/*" data-demo-photo-input>
+              <small class="photo-demo-note">Use imagem ficticia ou avatar institucional. Nao envie foto real de aluno, documento ou dado sensivel.</small>
+              <button class="photo-demo-clear" type="button" data-demo-photo-clear>Remover imagem</button>
+            </div>
+          </div>
+        </div>
         <label>Tema da aula<input id="lessonTopic" value="Responsabilidade civil em contratos digitais"></label>
         <label>Turma ficticia<input id="lessonClass" value="Turma demo - Direito Civil"></label>
         <label>Duracao<input id="lessonDuration" value="50 minutos"></label>
