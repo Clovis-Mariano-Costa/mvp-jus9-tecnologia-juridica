@@ -22,6 +22,9 @@
     .contract-status.ok{border-color:#9bc28a;background:#f6fff2}
     .contract-status.warn{border-color:#d8c9aa;background:#fffdf8}
     .contract-status.error{border-color:#dfb4a8;background:#fff8f5}
+    .google-agenda-contract{border:1px solid #d8c9aa;background:#fffdf8;border-radius:8px;padding:1rem;margin:1rem 0;display:grid;gap:.55rem}
+    .google-agenda-contract strong{color:#0b1a33}
+    .google-agenda-contract p{margin:0;color:#45556c}
     @media(max-width:760px){.agenda-form{grid-template-columns:1fr}}
   </style>
 </head>
@@ -64,6 +67,10 @@
         <div class="eyebrow">Agenda Jus 9 - hibrida</div>
         <h1>Agenda propria para prazos juridicos, com saida rapida para Google Calendar.</h1>
         <p>Para demonstracao, a Agenda Jus 9 funciona localmente no navegador: registra compromissos ficticios, gera link para Google Calendar e baixa arquivo ICS. No backend real, ela vira agenda auditavel por perfil, DAJ, processo e equipe.</p>
+        <div class="google-agenda-contract" role="note">
+          <strong>Google Agenda visivel, ainda nao conectado</strong>
+          <p>O botao abre apenas um rascunho manual no Google Agenda. Nenhum OAuth, token ou calendario real esta conectado nesta fase.</p>
+        </div>
         <div class="actions">
           <a class="btn gold" href="#novo">Criar compromisso</a>
           <a class="btn" href="#semana">Ver semana</a>
@@ -77,6 +84,23 @@
       <article class="card">
         <h2>Novo compromisso demonstrativo</h2>
         <form id="agendaForm" class="agenda-form">
+          <label class="full">MVP / area da agenda
+            <select id="agendaMvp">
+              <option value="demo-01-advogado-defensor">Demo 1 - Advogado / Defensor Publico</option>
+              <option value="demo-02-professor">Demo 2 - Professor</option>
+              <option value="demo-03-estudante">Demo 3 - Estudante</option>
+              <option value="demo-04-cidadao">Demo 4 - Cidadao / Interessado</option>
+              <option value="demo-05-empresa">Demo 5 - Empresa / Juridico interno</option>
+              <option value="demo-06-investidor">Demo 6 - Investidor / Parceiro</option>
+              <option value="demo-07-delegado">Demo 7 - Delegado / Policia Judiciaria</option>
+              <option value="demo-08-juiz">Demo 8 - Juiz / Gabinete</option>
+              <option value="demo-09-estagiario">Demo 9 - Estagiario / Aprendiz</option>
+              <option value="demo-10-cartorio">Demo 10 - Cartorio / Secretaria</option>
+              <option value="demo-11-administrador">Demo 11 - Administrador / Gestao</option>
+              <option value="demo-12-promotor">Demo 12 - Promotor / Ministerio Publico</option>
+              <option value="demo-13-orgao-publico">Demo 13 - Orgao Publico</option>
+            </select>
+          </label>
           <label>Titulo<input id="agendaTitle" required value="Reuniao Jus 9 - demonstracao MVP"></label>
           <label>Tipo
             <select id="agendaType">
@@ -94,7 +118,7 @@
           <label class="full">Descricao<textarea id="agendaDescription" rows="4">Compromisso demonstrativo da Agenda Jus 9. Nao usar dados reais no MVP publico.</textarea></label>
           <div class="actions">
             <button class="btn gold" type="submit">Salvar e validar contrato</button>
-            <button class="btn" type="button" id="googleCalendarButton">Abrir no Google Calendar</button>
+            <button class="btn" type="button" id="googleCalendarButton">Abrir Google Agenda (modo contrato)</button>
             <button class="btn" type="button" id="icsButton">Baixar ICS</button>
           </div>
         </form>
@@ -172,6 +196,7 @@ function agendaEvent() {
   const end = new Date(start.getTime() + duration * 60000);
   return {
     title: document.getElementById("agendaTitle").value,
+    mvp: document.getElementById("agendaMvp").value,
     type: document.getElementById("agendaType").value,
     start: offsetIso(start),
     end: offsetIso(end),
@@ -187,9 +212,9 @@ function backendPayload(event) {
     end: event.end,
     timezone: agendaTimezone,
     classification: "INTERNO / DEMO",
-    source: "mvp-agenda",
+    source: `mvp-agenda:${event.mvp || "geral"}`,
     actor: "Fundador",
-    relatedId: "DAJ-DEMO-001",
+    relatedId: (event.mvp || "MVP-GERAL").toUpperCase(),
     description: event.description || "Sem dados reais nesta fase."
   };
 }
@@ -233,7 +258,7 @@ function googleUrl(event) {
     action: "TEMPLATE",
     text: event.title,
     dates: `${fmt(start)}/${fmt(end)}`,
-    details: `${event.type}. ${event.description}`,
+    details: `MVP: ${event.mvp}. ${event.type}. ${event.description}`,
     location: event.location
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
@@ -253,7 +278,7 @@ function downloadIcs(event) {
     `DTEND:${fmt(end)}`,
     `SUMMARY:${event.title}`,
     `LOCATION:${event.location}`,
-    `DESCRIPTION:${event.type} - ${event.description}`,
+    `DESCRIPTION:MVP: ${event.mvp} - ${event.type} - ${event.description}`,
     "END:VEVENT",
     "END:VCALENDAR"
   ].join("\r\n");
@@ -275,7 +300,7 @@ function renderSaved() {
   }
   box.innerHTML = events.map((event) => {
     const start = new Date(event.start);
-    return `<div class="event"><b>${pad(start.getDate())}/${pad(start.getMonth()+1)}</b><span>${pad(start.getHours())}:${pad(start.getMinutes())}</span><span>${event.title}<br><small>${event.type} - ${event.location}</small></span><span class="status">Salvo</span></div>`;
+    return `<div class="event"><b>${pad(start.getDate())}/${pad(start.getMonth()+1)}</b><span>${pad(start.getHours())}:${pad(start.getMinutes())}</span><span>${event.title}<br><small>${event.mvp || "MVP geral"} - ${event.type} - ${event.location}</small></span><span class="status">Salvo</span></div>`;
   }).join("");
 }
 
@@ -300,7 +325,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   document.getElementById("googleCalendarButton").addEventListener("click", () => {
-    try { window.open(googleUrl(agendaEvent()), "_blank", "noopener"); } catch (error) { alert(error.message); }
+    try {
+      setBackendStatus("warn", "Abrindo rascunho manual no Google Agenda. Revise antes de salvar; ainda nao ha conexao OAuth real.");
+      window.open(googleUrl(agendaEvent()), "_blank", "noopener");
+    } catch (error) { alert(error.message); }
   });
   document.getElementById("icsButton").addEventListener("click", () => {
     try { downloadIcs(agendaEvent()); } catch (error) { alert(error.message); }
