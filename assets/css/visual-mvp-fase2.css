@@ -469,3 +469,68 @@ button,input,select,textarea{max-width:100%}
   .grid,.grid2,.grid-2,.grid-3,.grid-4,.cards3,.profile-grid,.demo-grid,.demo-grid-2,.workbench,.timeline,.footer-grid{grid-template-columns:1fr!important;}
   table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
 }
+
+/* Pacote visual 4.2 - MVPs enxutos e formularios */
+.card,
+.module-card,
+.profile-band,
+.status-item,
+.seal,
+.mvp-card,
+.daj-card,
+.notice{
+  border-radius:8px!important;
+}
+label{
+  display:grid;
+  gap:.38rem;
+  font-weight:850;
+}
+input,select,textarea{
+  min-height:46px;
+  border-radius:8px!important;
+  border:1px solid rgba(18,48,71,.22)!important;
+  background:rgba(255,255,255,.96)!important;
+  color:#0b1728!important;
+  transition:border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+textarea{
+  min-height:124px;
+  resize:vertical;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:var(--j9-gold,#d9ad59)!important;
+  box-shadow:0 0 0 4px rgba(217,173,89,.15);
+  background:#fffef9!important;
+}
+input[type="file"]::file-selector-button{
+  border:0;
+  border-radius:8px;
+  background:#06111f;
+  color:#fff;
+  padding:.55rem .75rem;
+  margin-right:.75rem;
+  font-weight:900;
+}
+.photo-demo-control{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:.85rem;
+  align-items:start;
+}
+.photo-demo-preview{
+  width:80px;
+  min-height:80px;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  background:#fff8e8;
+  color:#72510d;
+  border:1px solid rgba(217,173,89,.24);
+  font-weight:900;
+}
+@media(max-width:640px){
+  .photo-demo-control{grid-template-columns:1fr}
+  .photo-demo-preview{width:100%;min-height:68px}
+}
