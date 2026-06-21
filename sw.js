@@ -1,4 +1,4 @@
-const JUS9_MVP_CACHE = 'jus9-mvp-pwa-v2';
+const JUS9_MVP_CACHE = 'jus9-mvp-pwa-v3';
 const JUS9_MVP_ASSETS = [
   '/',
   '/app.html',
@@ -8,6 +8,8 @@ const JUS9_MVP_ASSETS = [
   '/app-perfis.html',
   '/app-agenda.html',
   '/agenda.html',
+  '/perfis/autor-editor.html',
+  '/perfil-autor-editor.html',
   '/ia-estudantes.html',
   '/ia-profissional.html',
   '/offline.html',
@@ -15,6 +17,7 @@ const JUS9_MVP_ASSETS = [
   '/assets/css/visual-mvp-fase1.css',
   '/assets/css/visual-mvp-fase2.css',
   '/assets/js/mvp.js',
+  '/assets/js/autor-editor-mvp.js',
   '/assets/img/favicon.png'
 ];
 

@@ -1,80 +1,121 @@
 [
   {
     "slug": "advogado-defensor",
-    "nome": "Advogado(a) ou Defensor(a) Público(a)",
-    "status": "Ajustado",
-    "descricao": "MVP jurídico profissional já existente, ajustado para também atender Defensor Público no mesmo ambiente."
+    "nome": "Advogado(a) ou Defensor(a) Publico(a)",
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "DAJ, atendimento inicial, prazos, documentos, pesquisa juridica guiada e revisao humana."
+  },
+  {
+    "slug": "autor-editor",
+    "nome": "Autor(a) / Editor(a)",
+    "nivel_visual": "detalhista",
+    "status": "operacional demonstrativo",
+    "descricao": "Obra, autoria, amostra gratuita, parecer editorial, agenda de publicacao e direitos autorais preservados."
   },
   {
     "slug": "professor",
     "nome": "Professor(a)",
-    "status": "Novo",
-    "descricao": "Ambiente didático para preparar aulas, atividades, roteiros e materiais de ensino jurídico."
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Aulas, atividades, casos, bibliografia, avaliacao e materiais didaticos."
+  },
+  {
+    "slug": "mestre",
+    "nome": "Mestre / Pesquisador(a)",
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Pesquisa, metodologia, qualificacao, capitulos, fontes e agenda academica."
+  },
+  {
+    "slug": "doutor",
+    "nome": "Doutor(a)",
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Tese, producao cientifica, grupos de pesquisa, referencias e publicacao academica."
   },
   {
     "slug": "estudante",
     "nome": "Estudante",
-    "status": "Novo",
-    "descricao": "Apoio educativo para estudo, resumos, dúvidas e organização de aprendizagem."
+    "nivel_visual": "pequeno",
+    "status": "operacional demonstrativo",
+    "descricao": "Rotina de estudo, resumos, duvidas, simulados e organizacao de aprendizagem."
+  },
+  {
+    "slug": "grupo-estudantes",
+    "nome": "Grupo de Estudantes",
+    "nivel_visual": "pequeno",
+    "status": "operacional demonstrativo",
+    "descricao": "Tarefas coletivas, apresentacoes, distribuicao de estudo e materiais compartilhados."
   },
   {
     "slug": "cidadao",
-    "nome": "Cidadão / Interessado",
-    "status": "Novo",
-    "descricao": "Informação jurídica simples e responsável, sem substituir profissional habilitado."
+    "nome": "Cidadao / Interessado",
+    "nivel_visual": "pequeno",
+    "status": "operacional demonstrativo",
+    "descricao": "Informacao juridica simples, triagem educativa e encaminhamento para revisao humana."
   },
   {
-    "slug": "perito-judicial",
+    "slug": "perito",
     "nome": "Perito Judicial",
-    "status": "Novo",
-    "descricao": "Organização técnica de perícias judiciais e documentos de apoio."
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Quesitos, vistorias, laudos, anexos tecnicos e controle de cadeia documental."
   },
   {
-    "slug": "investidor-parceiro",
+    "slug": "investidor",
     "nome": "Investidor / Parceiro",
-    "status": "Novo",
-    "descricao": "Entrada institucional para conhecer a Jus 9, MVP, equipe, pitch e roadmap."
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Roadmap, equipe, riscos, pitch, agenda de reunioes e materiais de parceria."
   },
   {
-    "slug": "escritorio-juridico",
-    "nome": "Escritório Jurídico",
-    "status": "Novo",
-    "descricao": "Ambiente para equipes jurídicas e organização interna de casos e documentos."
+    "slug": "escritorio",
+    "nome": "Escritorio Juridico",
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Carteira, equipe, modelos, documentos, agenda e governanca operacional."
   },
   {
-    "slug": "empresa-juridico-interno",
-    "nome": "Empresa / Jurídico Interno",
-    "status": "Novo",
-    "descricao": "Organização de contratos, riscos, compliance, LGPD e demandas internas."
+    "slug": "empresa",
+    "nome": "Empresa / Juridico Interno",
+    "nivel_visual": "medio",
+    "status": "operacional demonstrativo",
+    "descricao": "Contratos, compliance, LGPD, riscos internos e demandas recorrentes."
   },
   {
     "slug": "orgao-publico",
-    "nome": "Órgão Público / Instituição",
-    "status": "Previsto / em governança",
-    "descricao": "Perfil previsto para uso institucional com cautela, transparência e segurança."
+    "nome": "Orgao Publico / Instituicao",
+    "nivel_visual": "medio",
+    "status": "previsto / em governanca",
+    "descricao": "Uso institucional com transparencia, controle de permissao e limites publicos."
   },
   {
-    "slug": "administrador-jus9",
+    "slug": "administrador",
     "nome": "Administrador Jus 9",
-    "status": "Previsto / em governança",
-    "descricao": "Perfil interno futuro para permissões, configurações e governança do ecossistema."
+    "nivel_visual": "detalhista",
+    "status": "previsto / em governanca",
+    "descricao": "Rotas, seguranca, logs, publicacao, permissoes e governanca do ecossistema."
   },
   {
-    "slug": "juiz-magistrado",
+    "slug": "juiz",
     "nome": "Juiz / Magistrado",
-    "status": "Previsto / em governança",
-    "descricao": "Perfil futuro e sensível para organização documental, sem substituir decisão humana."
+    "nivel_visual": "medio",
+    "status": "previsto / em governanca",
+    "descricao": "Organizacao documental sensivel, sem substituir decisao humana."
   },
   {
-    "slug": "promotor-ministerio-publico",
-    "nome": "Promotor / Ministério Público",
-    "status": "Previsto / em governança",
-    "descricao": "Perfil futuro e sensível para organização documental, sem substituir atuação institucional."
+    "slug": "promotor",
+    "nome": "Promotor / Ministerio Publico",
+    "nivel_visual": "medio",
+    "status": "previsto / em governanca",
+    "descricao": "Procedimentos, diligencias e controle institucional com revisao humana."
   },
   {
-    "slug": "delegado-autoridade-policial",
+    "slug": "delegado",
     "nome": "Delegado / Autoridade Policial",
-    "status": "Previsto / em governança",
-    "descricao": "Perfil futuro e sensível para organização documental e cadeia de custódia, sempre dentro da lei."
+    "nivel_visual": "medio",
+    "status": "previsto / em governanca",
+    "descricao": "Investigacao documental, diligencias e sigilo dentro da lei."
   }
 ]

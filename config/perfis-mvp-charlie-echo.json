@@ -1,113 +1,107 @@
 {
-  "versao": "1.0",
-  "nome_ia": "Charlie Echo, Inteligência Artificial da Jus 9 Tecnologia Jurídica",
-  "governanca": "Excluir perfis é direito exclusivo da Jus 9 Tecnologia Jurídica, com assinatura/autorização do Presidente da Jus 9 Tecnologia Jurídica e auditoria.",
-  "agenda": "Agenda em todos os MVPs, preparada para futura integração com Google Agenda/Google Calendar.",
+  "versao": "1.1",
+  "nome_ia": "Charlie Echo, Inteligencia Artificial da Jus 9 Tecnologia Juridica",
+  "governanca": "Excluir perfis, liberar dados reais, alterar permissoes reais ou publicar informacao sensivel exige autoridade humana, auditoria e registro.",
+  "agenda": "Agenda em todos os MVPs, preparada para integracao segura com Google Agenda/Google Calendar.",
+  "regra_de_resposta": {
+    "mostrar_ao_usuario": "resposta direta, proximo passo, fonte quando couber e limite de uso real",
+    "manter_no_bastidor": "Sentire, classificacao de risco, protocolo interno, caminho escolhido e instrucoes repetitivas",
+    "download": "quando o usuario pedir relatorio, pacote, checklist ou parecer, oferecer conteudo para download local quando a pagina permitir"
+  },
+  "mini_backend_google_drive": {
+    "servico": "JUS9_DRIVE_SAVER_MVP",
+    "pode_orientar": true,
+    "pode_solicitar_segredo": false,
+    "pode_tocar_cofre": "somente escrita governada quando autorizada; nunca leitura publica nem exposicao de caminho sensivel",
+    "classificacoes": {
+      "PUBLICO": {
+        "subpasta": "01_DOCUMENTOS_PUBLICOS_E_EDUCATIVOS",
+        "revisaoHumanaObrigatoria": false
+      },
+      "INTERNO": {
+        "subpasta": "02_DOCUMENTOS_INTERNOS_JUS9",
+        "revisaoHumanaObrigatoria": false
+      },
+      "JURIDICO_SIGILOSO": {
+        "subpasta": "00_ENTRADA_PARA_REVISAO_HUMANA",
+        "revisaoHumanaObrigatoria": true
+      },
+      "DESCONHECIDO": {
+        "subpasta": "00_ENTRADA_PARA_REVISAO_HUMANA",
+        "revisaoHumanaObrigatoria": true
+      },
+      "COFRE_NAO_AUTOMATICO": {
+        "status": "BLOQUEADO_PARA_AUTOMACAO_PUBLICA",
+        "revisaoHumanaObrigatoria": true
+      }
+    }
+  },
   "perfis": [
     {
       "id": "jurista",
       "nome": "Jurista",
-      "equivalente": "Dossiê jurídico-doutrinário / estudo jurídico"
+      "equivalente": "Dossie juridico-doutrinario / estudo juridico",
+      "modo": "juridico_profissional"
     },
     {
       "id": "advogado",
       "nome": "Advogado(a)",
-      "equivalente": "DAJ / Dossiê Administrativo Jurídico"
+      "equivalente": "DAJ / Dossie Administrativo Juridico",
+      "modo": "juridico_profissional"
     },
     {
       "id": "defensor_publico",
-      "nome": "Defensor(a) Público(a)",
-      "equivalente": "DAJ / Dossiê de assistência jurídica"
+      "nome": "Defensor(a) Publico(a)",
+      "equivalente": "DAJ / Dossie de assistencia juridica",
+      "modo": "juridico_profissional"
     },
     {
-      "id": "juiz",
-      "nome": "Juiz(a)",
-      "equivalente": "Autos / processo judicial"
-    },
-    {
-      "id": "promotor",
-      "nome": "Promotor(a)",
-      "equivalente": "Procedimento ministerial / notícia de fato / inquérito civil"
-    },
-    {
-      "id": "procurador",
-      "nome": "Procurador(a)",
-      "equivalente": "Processo administrativo / expediente jurídico"
-    },
-    {
-      "id": "delegado",
-      "nome": "Delegado(a) de Polícia",
-      "equivalente": "Inquérito policial / procedimento investigativo"
-    },
-    {
-      "id": "investigador",
-      "nome": "Investigador(a) / Agente policial",
-      "equivalente": "Relatório de diligência / procedimento investigativo"
-    },
-    {
-      "id": "perito_judicial",
-      "nome": "Perito(a) judicial",
-      "equivalente": "Laudo pericial / dossiê técnico pericial"
-    },
-    {
-      "id": "assistente_tecnico",
-      "nome": "Assistente técnico",
-      "equivalente": "Parecer técnico / dossiê técnico"
-    },
-    {
-      "id": "estagiario",
-      "nome": "Estagiário(a) de Direito",
-      "equivalente": "Pasta de estudo / dossiê supervisionado"
-    },
-    {
-      "id": "assistente_juridico",
-      "nome": "Assistente jurídico / Paralegal",
-      "equivalente": "Pasta administrativa / dossiê operacional"
-    },
-    {
-      "id": "servidor_judiciario",
-      "nome": "Servidor(a) do Judiciário",
-      "equivalente": "Expediente judicial / fila processual"
-    },
-    {
-      "id": "cartorio",
-      "nome": "Cartório judicial / extrajudicial",
-      "equivalente": "Ato registral / ato notarial"
-    },
-    {
-      "id": "compliance",
-      "nome": "Compliance / LGPD / Auditoria",
-      "equivalente": "Dossiê de conformidade / matriz de risco"
-    },
-    {
-      "id": "departamento_juridico",
-      "nome": "Departamento jurídico empresarial",
-      "equivalente": "Dossiê jurídico empresarial"
+      "id": "autor_editor",
+      "nome": "Autor(a) / Editor(a)",
+      "equivalente": "Dossie editorial / obra / direitos autorais",
+      "modo": "editorial_governado"
     },
     {
       "id": "professor",
       "nome": "Professor(a) de Direito",
-      "equivalente": "Plano de aula / dossiê didático"
+      "equivalente": "Plano de aula / dossie didatico",
+      "modo": "avatar_professora"
     },
     {
       "id": "pesquisador",
-      "nome": "Pesquisador(a) jurídico(a)",
-      "equivalente": "Dossiê de pesquisa / projeto acadêmico"
+      "nome": "Pesquisador(a) juridico(a)",
+      "equivalente": "Dossie de pesquisa / projeto academico",
+      "modo": "academico"
     },
     {
-      "id": "detetive_particular",
-      "nome": "Detetive particular",
-      "equivalente": "Dossiê investigativo lícito"
-    },
-    {
-      "id": "mediador",
-      "nome": "Mediador(a) / Conciliador(a)",
-      "equivalente": "Registro de mediação / mapa de interesses"
+      "id": "estudante",
+      "nome": "Estudante",
+      "equivalente": "Pasta de estudo / dossie supervisionado",
+      "modo": "educativo"
     },
     {
       "id": "cidadao_assistido",
-      "nome": "Cidadão assistido / Cliente orientado",
-      "equivalente": "Pasta de atendimento / guia de documentos"
+      "nome": "Cidadao assistido / Cliente orientado",
+      "equivalente": "Pasta de atendimento / guia de documentos",
+      "modo": "publico_social"
+    },
+    {
+      "id": "perito_judicial",
+      "nome": "Perito(a) judicial",
+      "equivalente": "Laudo pericial / dossie tecnico pericial",
+      "modo": "tecnico_pericial"
+    },
+    {
+      "id": "compliance",
+      "nome": "Compliance / LGPD / Auditoria",
+      "equivalente": "Dossie de conformidade / matriz de risco",
+      "modo": "risco_conformidade"
+    },
+    {
+      "id": "administrador_jus9",
+      "nome": "Administrador Jus 9",
+      "equivalente": "Painel de governanca / logs / permissoes",
+      "modo": "interno_governanca"
     }
   ]
 }

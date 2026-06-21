@@ -28,7 +28,8 @@
       <h1>Da obra bruta ao pacote editorial governado.</h1>
       <p>Ambiente demonstrativo para autores, editoras, revisores e curadores organizarem obra, autoria, amostra gratuita, parecer editorial, calendario, publicacao e preservacao dos direitos autorais.</p>
       <div class="actions">
-        <a class="btn primary" href="https://livros.jus9tecnologia.com.br/enviar-obra.html">Enviar obra para avaliacao</a>
+        <a class="btn primary" href="#dossie-editorial">Montar dossie local</a>
+        <a class="btn" href="https://livros.jus9tecnologia.com.br/enviar-obra.html">Enviar obra para avaliacao</a>
         <a class="btn" href="https://livros.jus9tecnologia.com.br/sou-um-aeon-e-nasci-lembrando.html">Ver modelo publicado</a>
         <a class="btn" href="../agenda.html">Planejar agenda editorial</a>
       </div>
@@ -54,7 +55,7 @@
     <article class="module-card">
       <h3>Dossie da obra</h3>
       <p>Registrar titulo, autoria, pseudonimo, ISBN, versao, arquivo, sinopse, publico-alvo e status editorial.</p>
-      <a class="btn" href="https://livros.jus9tecnologia.com.br/enviar-obra.html">Abrir formulario</a>
+      <a class="btn" href="#dossie-editorial">Abrir formulario local</a>
     </article>
     <article class="module-card">
       <h3>Amostra gratuita</h3>
@@ -83,6 +84,72 @@
     </article>
   </section>
 
+  <section id="dossie-editorial" class="profile-band editorial-band">
+    <div>
+      <span class="badge">Dossie local</span>
+      <h2>Autor/Editor - relatorio demonstrativo</h2>
+      <p>Preencha apenas dados ficticios ou informacoes publicas. O relatorio e gerado no navegador, nao envia arquivo, nao grava em servidor e pode ser baixado para revisao humana.</p>
+    </div>
+  </section>
+
+  <section class="editorial-layout" aria-label="Formulario local Autor Editor">
+    <form class="editorial-form" id="autorEditorForm">
+      <label>Titulo da obra ou projeto
+        <input name="titulo" placeholder="Ex.: Manual demonstrativo de escrita juridica" required>
+      </label>
+      <label>Autor(a), pseudonimo ou equipe
+        <input name="autor" placeholder="Use nome ficticio no MVP publico" required>
+      </label>
+      <label>Categoria editorial
+        <select name="categoria" required>
+          <option value="">Selecione</option>
+          <option>Livro juridico</option>
+          <option>Livro tecnico</option>
+          <option>Livro literario</option>
+          <option>Material didatico</option>
+          <option>Pesquisa / artigo</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label>Estagio atual
+        <select name="estagio" required>
+          <option value="">Selecione</option>
+          <option>Ideia inicial</option>
+          <option>Rascunho</option>
+          <option>Manuscrito em revisao</option>
+          <option>Obra pronta para analise</option>
+          <option>Obra publicada</option>
+        </select>
+      </label>
+      <label>Paginas estimadas
+        <input name="paginas" type="number" min="1" step="1" placeholder="Ex.: 120">
+      </label>
+      <label>Percentual de amostra publica
+        <input name="amostra" type="number" min="0" max="100" step="0.001" value="8.594">
+      </label>
+      <label class="full">Sinopse publica ou resumo seguro
+        <textarea name="sinopse" rows="4" placeholder="Nao cole manuscrito completo, contratos, dados pessoais ou informacao sigilosa."></textarea>
+      </label>
+      <label class="full">Pendencias editoriais
+        <textarea name="pendencias" rows="4" placeholder="Ex.: revisar autoria, definir amostra, checar direitos de imagem, preparar agenda de publicacao."></textarea>
+      </label>
+      <div class="declarations full">
+        <label><input type="checkbox" name="autoria" required> Confirmo que este teste nao usa obra sigilosa nem dado pessoal real.</label>
+        <label><input type="checkbox" name="revisao" required> Entendo que publicacao, contrato, ISBN, cessao e licenca exigem revisao humana.</label>
+      </div>
+      <div class="form-actions full">
+        <button class="btn primary" type="submit">Gerar relatorio</button>
+        <button class="btn" type="button" data-download-editorial disabled>Baixar relatorio</button>
+        <button class="btn" type="reset">Limpar</button>
+      </div>
+    </form>
+    <aside class="report-card">
+      <h2>Relatorio preparado</h2>
+      <p class="small">A Charlie Echo deve usar este formato como resposta util: primeiro conteudo, depois cautela e proximo passo.</p>
+      <pre id="autorEditorReport">Preencha o formulario para gerar o relatorio local.</pre>
+    </aside>
+  </section>
+
   <section class="grid">
     <article class="card">
       <h2>Charlie Echo neste perfil</h2>
@@ -97,5 +164,6 @@
 
 <footer>© Jus 9 Tecnologia Juridica - software livre, autoria preservada.</footer>
 <script src="../assets/js/mvp-v14.js"></script>
+<script src="../assets/js/autor-editor-mvp.js"></script>
 </body>
 </html>
