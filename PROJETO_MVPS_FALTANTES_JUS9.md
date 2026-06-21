@@ -35,6 +35,7 @@
 25. Jus 9 Jornada.
 26. Jus 9 Verde.
 27. Integrações externas.
+28. Autor/Editor - dossiê editorial, autoria, amostra gratuita, parecer, publicação e preservação de direitos autorais.
 
 ## Frase-guia
 

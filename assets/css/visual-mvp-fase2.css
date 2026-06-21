@@ -199,6 +199,22 @@ details{
   background:linear-gradient(180deg,rgba(255,253,248,.98),rgba(247,242,232,.96));
 }
 
+.hero .card:not(.dark),
+.profile-hero .card:not(.dark){
+  color:var(--j9-ink);
+}
+
+.hero .card:not(.dark) h1,
+.hero .card:not(.dark) h2,
+.hero .card:not(.dark) h3,
+.hero .card:not(.dark) label,
+.profile-hero .card:not(.dark) h1,
+.profile-hero .card:not(.dark) h2,
+.profile-hero .card:not(.dark) h3,
+.profile-hero .card:not(.dark) label{
+  color:var(--j9-ink);
+}
+
 .strip.dark,
 .card.dark{
   background:linear-gradient(135deg,#06111f,#0b2238);

@@ -17,6 +17,7 @@
 13. IA profissional supervisionada.
 14. Governança da IA.
 15. Painel administrativo.
+16. Autor/Editor - obra, autoria, direitos autorais, parecer editorial, amostra pública e agenda de publicação.
 
 ## Regra
 
