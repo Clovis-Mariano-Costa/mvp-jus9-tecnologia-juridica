@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DAJ Express | MVP Advogados Jus 9</title>
+  <link rel="stylesheet" href="assets/css/mvp-v14.css">
+  <link rel="stylesheet" href="assets/css/visual-mvp-fase2.css">
+  <meta name="theme-color" content="#07111f">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body class="daj-express-body">
+<header>
+  <nav>
+    <a class="primary" href="index.html">MVP Jus 9</a>
+    <a href="perfil-advogado.html">MVP Advogados</a>
+    <a href="agenda.html">Agenda Jus 9</a>
+    <a href="documentos.html">Documentos</a>
+    <a href="https://charlieecho.jus9tecnologia.com.br/">Charlie Echo</a>
+  </nav>
+</header>
+
+<main class="profile-shell daj-express-page">
+  <section class="profile-hero">
+    <div class="hero-copy">
+      <span class="badge">MVP Advogados</span>
+      <h1>DAJ Express</h1>
+      <p><strong>Dossie Administrativo Juridico em modo rapido.</strong></p>
+      <p>Triagem, classificacao, checklist, minuta inicial e saida para download ou salvamento governado no Cartorio Digital.</p>
+      <div class="actions">
+        <a class="btn" href="#triagem">Preencher triagem</a>
+        <a class="btn" href="#saida">Ver saida</a>
+        <a class="btn" href="perfis/advogado-defensor.html">Voltar ao perfil</a>
+      </div>
+    </div>
+    <aside class="status-rail" aria-label="Estado do DAJ Express">
+      <div class="status-item"><span class="status-dot"></span><div><b>Fluxo minimo</b><br><span class="small">Um atendimento vira um DAJ baixavel em poucos minutos.</span></div></div>
+      <div class="status-item"><span class="status-dot"></span><div><b>Sem dados reais no publico</b><br><span class="small">Use dados ficticios ate haver autenticacao, contrato e revisao humana.</span></div></div>
+      <div class="status-item"><span class="status-dot"></span><div><b>Drive Saver</b><br><span class="small">Salvar no Drive exige endpoint seguro, token e classificacao permitida.</span></div></div>
+    </aside>
+  </section>
+
+  <section class="profile-band">
+    <h2>Fluxo de encerramento rapido</h2>
+    <div class="trust-list">
+      <span>1. Triar</span>
+      <span>2. Classificar</span>
+      <span>3. Gerar DAJ</span>
+      <span>4. Baixar ou salvar</span>
+    </div>
+  </section>
+
+  <section class="daj-express-layout" id="triagem">
+    <form id="dajExpressForm" class="daj-form" autocomplete="off">
+      <div class="daj-form-heading">
+        <h2>Triagem do atendimento</h2>
+        <p class="small">Campos enxutos para fechar o primeiro MVP de advogados sem travar em cadastro completo.</p>
+      </div>
+
+      <label>Tipo de atendimento
+        <select id="dajTipo">
+          <option>Atendimento inicial</option>
+          <option>Prazo ou audiencia</option>
+          <option>Documento ou processo</option>
+          <option>Retorno ao cliente</option>
+          <option>Pesquisa e minuta supervisionada</option>
+        </select>
+      </label>
+
+      <label>Classificacao
+        <select id="dajClassificacao">
+          <option value="JURIDICO_SIGILOSO">JURIDICO_SIGILOSO - revisao humana</option>
+          <option value="INTERNO">INTERNO - equipe Jus 9</option>
+          <option value="PUBLICO">PUBLICO - educativo/ficticio</option>
+          <option value="COFRE_NAO_AUTOMATICO">COFRE_NAO_AUTOMATICO - bloquear automacao</option>
+        </select>
+      </label>
+
+      <label>Referencia do cliente ou assistido
+        <input id="dajReferencia" value="Cliente ficticio A" maxlength="120">
+      </label>
+
+      <label>Cidade/UF
+        <input id="dajLocal" value="Cidade/UF demonstrativa" maxlength="80">
+      </label>
+
+      <label>Prazo, risco ou urgencia
+        <input id="dajPrazo" value="Sem prazo real informado no MVP publico" maxlength="160">
+      </label>
+
+      <label>Responsavel pela revisao
+        <input id="dajRevisor" value="Revisao humana obrigatoria antes de uso real" maxlength="160">
+      </label>
+
+      <label class="full">Fatos essenciais
+        <textarea id="dajFatos">Relato ficticio para demonstracao do fluxo. Substituir por dados reais somente em ambiente seguro e autorizado.</textarea>
+      </label>
+
+      <label class="full">Documentos recebidos ou pendentes
+        <textarea id="dajDocumentos">Documento exemplo 1; comprovante exemplo 2; pendencia de validacao humana.</textarea>
+      </label>
+
+      <label class="full">Pedido, objetivo ou proximo passo
+        <textarea id="dajObjetivo">Organizar atendimento, separar riscos, preparar checklist e encaminhar para revisao humana.</textarea>
+      </label>
+
+      <div class="declarations full">
+        <label><input id="dajConfirmacaoDemo" type="checkbox" checked> Estou usando conteudo ficticio ou devidamente autorizado para teste.</label>
+        <label><input id="dajConfirmacaoRevisao" type="checkbox" checked> Entendo que o DAJ nao substitui revisao humana qualificada.</label>
+        <label><input id="dajCriarLinkPublico" type="checkbox"> Solicitar link publico de download somente se a classificacao for PUBLICO.</label>
+      </div>
+
+      <div class="form-actions full">
+        <button class="btn primary" type="submit">Gerar DAJ</button>
+        <button class="btn" type="button" data-daj-download="md">Baixar .md</button>
+        <button class="btn" type="button" data-daj-download="json">Baixar .json</button>
+        <button class="btn" type="button" id="dajCopyButton">Copiar</button>
+        <button class="btn" type="button" id="dajClearButton">Limpar</button>
+      </div>
+    </form>
+
+    <aside class="daj-output" id="saida">
+      <div class="daj-output-head">
+        <div>
+          <h2>DAJ gerado</h2>
+          <p id="dajPolicy" class="small">Aguardando preenchimento.</p>
+        </div>
+        <span id="dajStatusBadge" class="pill">rascunho</span>
+      </div>
+      <pre id="dajPreview" aria-live="polite"></pre>
+    </aside>
+  </section>
+
+  <section class="daj-drive-panel" aria-label="Salvamento governado no Drive">
+    <div>
+      <h2>Salvar no Cartorio Digital</h2>
+      <p class="small">Opcional para ambiente autorizado. A chave interna do Apps Script nunca entra nesta tela; o frontend fala apenas com um endpoint seguro que guarda o segredo no servidor.</p>
+    </div>
+    <div class="daj-drive-grid">
+      <label>Endpoint seguro
+        <input id="dajDriveEndpoint" placeholder="http://127.0.0.1:3000/api/drive-saver/documentos">
+      </label>
+      <label>Token de acesso temporario
+        <input id="dajDriveToken" type="password" placeholder="Nao fica salvo no navegador">
+      </label>
+      <button class="btn primary" type="button" id="dajDriveSaveButton">Salvar via backend</button>
+    </div>
+    <div id="dajDriveResult" class="daj-drive-result" aria-live="polite">Aguardando configuracao do endpoint.</div>
+  </section>
+</main>
+
+<footer>Copyright Jus 9 Tecnologia Juridica - software livre, autoria preservada.</footer>
+<script src="assets/js/daj-express.js"></script>
+<script src="assets/js/pwa-install.js"></script>
+</body>
+</html>

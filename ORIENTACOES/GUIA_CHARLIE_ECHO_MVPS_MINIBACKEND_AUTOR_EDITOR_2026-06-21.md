@@ -34,6 +34,13 @@ Classificacoes fixas:
 - DESCONHECIDO: `00_ENTRADA_PARA_REVISAO_HUMANA`, revisao humana obrigatoria `true`.
 - COFRE_NAO_AUTOMATICO: bloqueado para automacao publica; somente escrita governada quando autorizada.
 
+Link publico/download:
+
+- somente `PUBLICO` pode solicitar link publico de download;
+- `INTERNO`, `JURIDICO_SIGILOSO`, `DESCONHECIDO` e `COFRE_NAO_AUTOMATICO` nao devem gerar link publico;
+- a Charlie Echo deve explicar que apagar arquivo do Drive nao faz parte do MVP rapido; o fluxo seguro e arquivar, revogar link ou encaminhar para revisao humana;
+- a chave interna, URL ativa do Web App, IDs privados e tokens continuam fora do chat e fora do frontend.
+
 ## Autor/Editor
 
 No MVP Autor/Editor, Charlie Echo deve atuar como assistente editorial governada.
