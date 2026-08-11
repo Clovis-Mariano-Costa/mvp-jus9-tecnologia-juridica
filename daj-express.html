@@ -67,6 +67,14 @@
         </select>
       </label>
 
+      <label>Prioridade operacional
+        <select id="dajPrioridade">
+          <option value="NORMAL">Normal</option>
+          <option value="ALTA">Alta - acompanhar no mesmo dia</option>
+          <option value="URGENTE">Urgente - verificar imediatamente</option>
+        </select>
+      </label>
+
       <label>Classificacao
         <select id="dajClassificacao">
           <option value="JURIDICO_SIGILOSO">JURIDICO_SIGILOSO - revisao humana</option>
@@ -86,6 +94,10 @@
 
       <label>Prazo, risco ou urgencia
         <input id="dajPrazo" value="Sem prazo real informado no MVP publico" maxlength="160">
+      </label>
+
+      <label>Data limite (se aplicavel)
+        <input id="dajDataLimite" type="date">
       </label>
 
       <label>Responsavel pela revisao
@@ -124,6 +136,7 @@
         <div>
           <h2>DAJ gerado</h2>
           <p id="dajPolicy" class="small">Aguardando preenchimento.</p>
+          <p id="dajStoragePolicy" class="small">Rascunho local ainda não avaliado.</p>
         </div>
         <span id="dajStatusBadge" class="pill">rascunho</span>
       </div>

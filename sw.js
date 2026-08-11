@@ -1,4 +1,4 @@
-const JUS9_MVP_CACHE = 'jus9-mvp-pwa-v4';
+const JUS9_MVP_CACHE = 'jus9-mvp-pwa-v5';
 const JUS9_MVP_ASSETS = [
   '/',
   '/app.html',

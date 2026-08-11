@@ -3,6 +3,7 @@
   const preview = document.getElementById("dajPreview");
   const policy = document.getElementById("dajPolicy");
   const statusBadge = document.getElementById("dajStatusBadge");
+  const storagePolicy = document.getElementById("dajStoragePolicy");
   const linkPublico = document.getElementById("dajCriarLinkPublico");
   const driveEndpoint = document.getElementById("dajDriveEndpoint");
   const driveToken = document.getElementById("dajDriveToken");
@@ -11,10 +12,12 @@
 
   const fields = {
     tipo: "dajTipo",
+    prioridade: "dajPrioridade",
     classificacao: "dajClassificacao",
     referencia: "dajReferencia",
     local: "dajLocal",
     prazo: "dajPrazo",
+    dataLimite: "dajDataLimite",
     revisor: "dajRevisor",
     fatos: "dajFatos",
     documentos: "dajDocumentos",
@@ -77,6 +80,23 @@
     return rules[classificacao] || rules.JURIDICO_SIGILOSO;
   }
 
+  function hasOperationalDeadline(data) {
+    return Boolean(data.dataLimite || (data.prazo && data.prazo !== "Sem prazo real informado no MVP publico"));
+  }
+
+  function validationMessage(data) {
+    if (!data.confirmacaoDemo || !data.confirmacaoRevisao) {
+      return "Confirme o uso autorizado/ficticio e a revisao humana antes de gerar.";
+    }
+    if (!data.referencia || !data.fatos || !data.objetivo) {
+      return "Preencha referência, fatos essenciais e próximo passo antes de gerar.";
+    }
+    if (data.prioridade === "URGENTE" && !hasOperationalDeadline(data)) {
+      return "Para prioridade urgente, informe o risco/prazo ou uma data limite.";
+    }
+    return "";
+  }
+
   function line(label, valueText) {
     return `- ${label}: ${valueText || "Nao informado"}`;
   }
@@ -87,11 +107,13 @@
       "# DAJ Express - MVP Advogados Jus 9",
       "",
       line("Tipo de atendimento", data.tipo),
+      line("Prioridade operacional", data.prioridade),
       line("Classificacao", data.classificacao),
       line("Revisao humana obrigatoria", rule.review ? "SIM" : "NAO POR PADRAO"),
       line("Referencia", data.referencia),
       line("Cidade/UF", data.local),
       line("Prazo, risco ou urgencia", data.prazo),
+      line("Data limite", data.dataLimite),
       line("Responsavel pela revisao", data.revisor),
       line("Link publico solicitado", data.criarLinkPublico && rule.canCreatePublicLink ? "SIM" : "NAO"),
       "",
@@ -124,10 +146,29 @@
       linkPublico.disabled = !rule.canCreatePublicLink;
       if (!rule.canCreatePublicLink) linkPublico.checked = false;
     }
-    policy.textContent = rule.message;
+    policy.textContent = validationMessage(data) || rule.message;
     statusBadge.textContent = rule.badge;
     preview.textContent = buildMarkdown(collect());
-    localStorage.setItem(storageKey, JSON.stringify(collect()));
+    persistDraft(data);
+  }
+
+  function canPersistDraft(data) {
+    return ["PUBLICO", "INTERNO"].includes(data.classificacao);
+  }
+
+  function persistDraft(data) {
+    if (canPersistDraft(data)) {
+      localStorage.setItem(storageKey, JSON.stringify(data));
+      if (storagePolicy) {
+        storagePolicy.textContent = "Rascunho salvo apenas neste navegador; não use dados reais no MVP público.";
+      }
+      return;
+    }
+
+    localStorage.removeItem(storageKey);
+    if (storagePolicy) {
+      storagePolicy.textContent = "Privacidade: conteúdo jurídico sigiloso/cofre não é persistido neste navegador.";
+    }
   }
 
   function download(filename, content, type) {
@@ -158,6 +199,10 @@
   function restore() {
     try {
       const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+      if (!canPersistDraft(saved)) {
+        localStorage.removeItem(storageKey);
+        return;
+      }
       Object.entries(fields).forEach(([key, id]) => {
         if (Object.prototype.hasOwnProperty.call(saved, key)) setValue(id, saved[key]);
       });
@@ -232,8 +277,7 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = collect();
-    if (!data.confirmacaoDemo || !data.confirmacaoRevisao) {
-      policy.textContent = "Confirme o uso autorizado/ficticio e a revisao humana antes de gerar.";
+    if (validationMessage(data)) {
       return;
     }
     render();
@@ -247,6 +291,10 @@
       render();
       const format = button.getAttribute("data-daj-download");
       const data = collect();
+      if (validationMessage(data)) {
+        policy.textContent = validationMessage(data);
+        return;
+      }
       if (format === "json") {
         download(filename("json"), JSON.stringify({ ...data, conteudo: buildMarkdown(data) }, null, 2), "application/json;charset=utf-8");
         return;
@@ -257,8 +305,33 @@
 
   document.getElementById("dajCopyButton")?.addEventListener("click", async () => {
     render();
-    await navigator.clipboard.writeText(preview.textContent || "");
-    policy.textContent = "DAJ copiado para a area de transferencia.";
+    const data = collect();
+    if (validationMessage(data)) {
+      policy.textContent = validationMessage(data);
+      return;
+    }
+    const text = preview.textContent || "";
+    let copied = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    } catch {
+      copied = false;
+    }
+    if (!copied) {
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "fixed";
+      helper.style.opacity = "0";
+      document.body.appendChild(helper);
+      helper.select();
+      try { copied = document.execCommand("copy"); } catch { copied = false; }
+      helper.remove();
+    }
+    policy.textContent = copied ? "DAJ copiado para a área de transferência." : "Não foi possível copiar automaticamente; use os botões de download.";
   });
 
   document.getElementById("dajClearButton")?.addEventListener("click", () => {
